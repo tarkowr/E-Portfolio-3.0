@@ -1,1 +1,18 @@
-.Landing {}
+.Landing {
+    height: calc(100vh - 75px) !important;
+}
+.name {
+    font-size: 5em;
+    letter-spacing: 4px;
+    word-wrap: wrap;
+    font-family: "Staatliches", "Muli", sans-serif;
+}
+.title {
+    font-size: 1.4em;
+}
+
+@media (max-width: 991px) {
+    .name {
+        font-size: 3.5em;
+    }
+}
