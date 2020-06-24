@@ -9,7 +9,6 @@ html, body {
     margin: 0;
 }
 
-a {
-    color: #282828;
-    text-decoration: none;
+.bg-dark {
+    background-color: #282828 !important;
 }

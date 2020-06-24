@@ -1,5 +1,6 @@
 .Landing {
-    height: calc(100vh - 75px) !important;
+    height: 100vh !important;
+    padding-top: 16%;
 }
 .name {
     font-size: 5em;

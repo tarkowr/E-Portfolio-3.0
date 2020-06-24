@@ -2,14 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Navbar.css';
 
-const Navbar = () => (
-  <div className="Navbar">
-    Navbar Component
-  </div>
-);
+export default class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.scrolledNav = props.scrolledNav;
+  }
 
-Navbar.propTypes = {};
+  render() {
+    let navClass = this.props.scrolledNav ? 'scrolled-nav' : 'landing-nav';
 
-Navbar.defaultProps = {};
+    return (
+      <div className={`Navbar ${navClass} text-white text-center w-100`}>
+        <i className="fa fa-bars d-none" id="nav-bars"> </i>
+        <a href="#about-me" className="nav-link">About Me</a>
+        <a href="#links-top" className="nav-link">Connect</a>
+        <a href="#projects-top" className="nav-link">Projects</a>
+      </div>
+    );
+  }
+}
 
-export default Navbar;
+Navbar.propTypes = {
+  scrolledNav: PropTypes.bool
+}
