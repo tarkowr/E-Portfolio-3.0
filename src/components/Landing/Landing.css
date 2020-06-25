@@ -11,6 +11,42 @@
 .title {
     font-size: 1.4em;
 }
+.splash-link {
+    color: white;
+    font-size: 1.8em;
+    padding: 10px 15px;
+    border: 1px solid white;
+    margin-left: -1px;
+}
+.splash-link:hover{
+    background-color: white;
+    color: #282828;
+}
+.link-github{
+    background-color: #282828;
+}
+.link-linkedin{
+    background-color: #0073b1;
+}
+.link-linkedin:hover{
+    color: #0073b1 !important;
+}
+.link-mail{
+    background-color: #eb4034;
+}
+.link-mail:hover{
+    color: #eb4034 !important;
+}
+.link-sf{
+    background-color: #00a1e0;
+}
+.link-sf:hover{
+    color: #00a1e0 !important;
+}
+.link-hover-label {
+    font-size: 1.2em;
+    font-family: "Staatliches", "Muli", sans-serif;
+}
 
 @media (max-width: 991px) {
     .name {
