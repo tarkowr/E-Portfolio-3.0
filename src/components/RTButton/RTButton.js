@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './RTButton.css';
 
+/// Credit to https://codepen.io/bhadupranjal/pen/vYLZYqQ for this button
 export default class RTButton extends React.Component {
   render() {
     return (
