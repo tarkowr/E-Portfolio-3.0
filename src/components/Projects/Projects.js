@@ -1,15 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Projects.css';
 
-const Projects = () => (
-  <div className="Projects">
-    Projects Component
-  </div>
-);
-
-Projects.propTypes = {};
-
-Projects.defaultProps = {};
-
-export default Projects;
+export default class Projects extends React.Component {
+  render() {
+    return (
+      <div>Projects Component</div>
+    );
+  }
+}

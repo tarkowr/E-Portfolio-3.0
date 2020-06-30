@@ -60,10 +60,6 @@ export default class Landing extends React.Component {
 }
 
 class LinkCard extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <a className={`splash-link ${this.props.cardClass}`} href={this.props.link} target="_blank"
