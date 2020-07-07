@@ -4,7 +4,7 @@ import './About.css';
 export default class About extends React.Component {
   render() {
     return (
-      <div className="About py-5">
+      <div id="about-component" className="About py-5">
         <div className="my-5 text-center">
           <div className="h1">&mdash; About Me &mdash;</div>
           <div className="row mx-0">

@@ -11,6 +11,9 @@
 .title {
     font-size: 1.4em;
 }
+.typed-cursor{
+    color: #4286f4;
+}
 .splash-link {
     color: white;
     font-size: 1.8em;

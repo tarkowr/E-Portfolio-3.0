@@ -14,9 +14,9 @@ export default class Navbar extends React.Component {
     return (
       <div className={`Navbar ${navClass} text-white text-center w-100`}>
         <i className="fa fa-bars d-none" id="nav-bars"> </i>
-        <a href="#about-me" className="nav-link">About Me</a>
-        <a href="#links-top" className="nav-link">Connect</a>
-        <a href="#projects-top" className="nav-link">Projects</a>
+        <a href="#about-component" className="nav-link">About Me</a>
+        <a href="#experience-component" className="nav-link">Experience</a>
+        <a href="#projects-component" className="nav-link">Projects</a>
       </div>
     );
   }

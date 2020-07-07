@@ -4,7 +4,7 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Landing from './components/Landing/Landing';
 import About from './components/About/About';
-import Connect from './components/Connect/Connect';
+import Experience from './components/Experience/Experience';
 import Projects from './components/Projects/Projects';
 import Footer from './components/Footer/Footer';
 import Error from './components/Error/Error';
@@ -58,7 +58,7 @@ class Home extends React.Component {
         <Navbar scrolledNav={this.state.isScrolledNav} />
         <Landing />
         <About />
-        <Connect />
+        <Experience />
         <Projects />
         <Footer />
       </div>
