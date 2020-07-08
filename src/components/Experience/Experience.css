@@ -1,0 +1,27 @@
+.experience-card-image {
+    width: 120px;
+    height: 120px;
+}
+.experience-card-title {
+    font-size: 1.75em;
+    font-weight: 400;
+}
+.experience-card-date {
+    font-size: 1.2em;
+    font-weight: 400;
+}
+.experience-card-description {
+    font-weight: 400;
+}
+@media (max-width: 991px) {
+    .experience-card-image {
+        width: 75px;
+        height: 75px;
+    }
+    .experience-card-title {
+        font-size: 1.25em;
+    }
+    .experience-card-date {
+        font-size: 1em;
+    }
+}

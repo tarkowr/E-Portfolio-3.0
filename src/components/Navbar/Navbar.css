@@ -2,6 +2,7 @@
     position: fixed;
     transition: padding-top .5s;
     transition-timing-function: ease;
+    z-index: 100;
 }
 .landing-nav {
     background-color: transparent;
