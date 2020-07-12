@@ -23,13 +23,13 @@ export default class Landing extends React.Component {
   onLinkMouseOver = (label) => {
     this.setState({
       linkLabel: <div className="w-100 text-center text-white pt-3 link-hover-label">{label}</div>
-    })
+    });
   }
 
   onLinkMouseOut = () => {
     this.setState({
       linkLabel: <div></div>
-    })
+    });
   }
 
   buildLinkButtons = () => {
@@ -49,7 +49,7 @@ export default class Landing extends React.Component {
 
   render() {
     return (
-      <div className="Landing w-100 bg-dark text-center text-white">
+      <div className="Landing w-100 text-center text-white">
         { this.name }
         { this.title }
         { this.buildLinkButtons() }

@@ -11,10 +11,11 @@ export default class Experience extends React.Component {
     return (
       <div>
         { this.buildGroupTitle('EDUCATION') }
-        <ExperienceCard imagePath='/fsu_icon.jpg' title='Ferris State University' date='Fall 2019 - Current' 
-          description='Studying Information Systems (BA) and Information Security (MIN). Key courses include systems analysis & design and mobile development.' />
-        <ExperienceCard imagePath='/nmc_icon.png' title='Northwestern Michigan College' date='Fall 2017 - Spring 2019' 
-          description='Studied Computer Information Technology. Key courses included web and .NET application development.' />
+        <ExperienceCard imagePath='/fsu_icon.jpg' title='Ferris State University' date='August 2019 - Present' 
+          description='Studying Information Systems (BA) and Information Security (Min). Key courses include Systems Analysis & Design, Mobile Development, and Ethical Hacking.' />
+        <hr/>
+        <ExperienceCard imagePath='/nmc_icon.png' title='Northwestern Michigan College' date='August 2017 - May 2019' 
+          description='Studied Computer Information Technology. The core courses focused on web development (HTML, CSS, JavaScript, and PHP) and .NET application development (C#, WPF, and ASP.NET MVC).' />
       </div>
     );
   }
@@ -23,12 +24,14 @@ export default class Experience extends React.Component {
     return (
       <div className="mt-4">
         { this.buildGroupTitle('WORK EXPERIENCE') }
-        <ExperienceCard imagePath='/hagerty_icon.png' title='Hagerty' date='Summer 2020 - Current' 
-          description={`Developed Hagerty's Insider app with Flutter and Dart on a mobile development team.`} />
-        <ExperienceCard imagePath='/hagerty_icon.png' title='Hagerty' date='Summer 2019 - Winter 2020' 
-          description='Implemented numerous features in an ASP.NET MVC data validation tool with another Software Engineer intern.' />
-        <ExperienceCard imagePath='/hagerty_icon.png' title='Hagerty' date='Summer 2018 - Spring 2019' 
-          description='Built and maintained a TypeScript test automation project with two other Software Engineer interns.' />
+        <ExperienceCard imagePath='/hagerty_icon.png' title='Hagerty'  date='May 2020 - Present' 
+          description={`Developed the Hagerty Insider app with Flutter and Dart on Hagerty's mobile team. Collaborated with other full-time Flutter developers using Git/GitHub and Azure DevOps.`} />
+        <hr />
+        <ExperienceCard imagePath='/hagerty_icon.png' title='Hagerty' date='May 2019 - August 2019' 
+          description={`Implemented numerous features in an ASP.NET MVC data validation tool with another intern. Also contributed to Hagerty's Agile Accounting web application build with Python and Django.`} />
+        <hr />
+        <ExperienceCard imagePath='/hagerty_icon.png' title='Hagerty' date='May 2018 - August 2018' 
+          description={`Built and maintained a TypeScript test automation project with two other interns. Wrote SQL and SOQL queries to retrieve data from Hagerty's databases and Salesforce.`} />
       </div>
     );
   }
