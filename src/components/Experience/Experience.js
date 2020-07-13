@@ -28,7 +28,7 @@ export default class Experience extends React.Component {
           description={`Developed the Hagerty Insider app with Flutter and Dart on Hagerty's mobile team. Collaborated with other full-time Flutter developers using Git/GitHub and Azure DevOps.`} />
         <hr />
         <ExperienceCard imagePath='/hagerty_icon.png' title='Hagerty' date='May 2019 - August 2019' 
-          description={`Implemented numerous features in an ASP.NET MVC data validation tool with another intern. Also contributed to Hagerty's Agile Accounting web application build with Python and Django.`} />
+          description={`Implemented numerous features in an ASP.NET MVC data validation tool with another intern. Also contributed to Hagerty's Agile Accounting web application built with Python and Django.`} />
         <hr />
         <ExperienceCard imagePath='/hagerty_icon.png' title='Hagerty' date='May 2018 - August 2018' 
           description={`Built and maintained a TypeScript test automation project with two other interns. Wrote SQL and SOQL queries to retrieve data from Hagerty's databases and Salesforce.`} />

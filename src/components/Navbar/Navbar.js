@@ -1,15 +1,38 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Navbar.css';
 
 export default class Navbar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.scrolledNav = props.scrolledNav;
+  maxScroll = 100;
+
+  state = {
+    isScrolledNav: false
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = (e) => {
+    let scroll = window.pageYOffset;
+
+    if (!this.state.isScrolledNav && scroll > this.maxScroll) {
+      this.setState({
+        isScrolledNav: true
+      });
+    } 
+    else if (this.state.isScrolledNav && scroll <= this.maxScroll) {
+      this.setState({
+        isScrolledNav: false
+      });
+    }
   }
 
   render() {
-    let navClass = this.props.scrolledNav ? 'scrolled-nav' : 'landing-nav';
+    let navClass = this.state.isScrolledNav ? 'scrolled-nav' : 'landing-nav';
 
     return (
       <div className={`Navbar ${navClass} text-white text-center w-100`}>
@@ -20,8 +43,4 @@ export default class Navbar extends React.Component {
       </div>
     );
   }
-}
-
-Navbar.propTypes = {
-  scrolledNav: PropTypes.bool
 }

@@ -23,39 +23,10 @@ export default class App extends React.Component {
 }
 
 class Home extends React.Component {
-  maxScroll = 100;
-
-  state = {
-    isScrolledNav: false
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
-
-  handleScroll = (e) => {
-    let scroll = window.pageYOffset;
-
-    if (!this.state.isScrolledNav && scroll > this.maxScroll) {
-      this.setState({
-        isScrolledNav: true
-      });
-    } 
-    else if (this.state.isScrolledNav && scroll <= this.maxScroll) {
-      this.setState({
-        isScrolledNav: false
-      });
-    }
-  }
-
   render() {
     return (
       <div>
-        <Navbar scrolledNav={this.state.isScrolledNav} />
+        <Navbar/>
         <Landing />
         <About />
         <Experience />
