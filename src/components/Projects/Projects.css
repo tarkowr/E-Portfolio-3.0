@@ -1,9 +1,35 @@
 .Projects {
-    background-color: #282828 !important;
+    background-color: #22262a !important;
+}
+.ProjectCard {
+    background-color: rgba(0,0,0,.2);
+    box-shadow: 0px 0px 5px black;
+    border: 2px solid black;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    transition: box-shadow .3s;
+}
+.ProjectCard:hover{
+    box-shadow: 0px 0px 10px black;
+}
+.project-title {
+    font-size: 1.8em;
 }
 .TechCard {
     font-family: "Staatliches", "Muli", sans-serif;
     background-color: #394048 !important;
     letter-spacing: 1px;
     border: 2px solid black;
+}
+.ProjectButton {
+    font-family: "Staatliches", "Muli", sans-serif;
+    background-color: rgba(255,255,255,.85);
+    font-size: 1em;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    padding: 12px 15px;
+}
+.ProjectButton:hover {
+    background-color: white !important;
 }
