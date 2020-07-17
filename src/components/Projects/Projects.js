@@ -17,18 +17,72 @@ export default class Projects extends React.Component {
   getProjectList() {
     const githubIcon = <i className="fa fa-code"></i>;
     const downloadIcon = <i className="fa fa-arrow-down"></i>;
+    const visitIcon = <i class="fa fa-chevron-circle-right"></i>;
+    const youtubeIcon = <i class="fa fa-youtube-play"></i>;
+
+    let congratsgradsTech = ['Angular', 'HTML5', 'CSS', 'TypeScript', 'Bootstrap', 'NodeJS', 'Firebase'];
+    let congratsgradsActions = [
+      {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/Congrats-Grads'},
+      {title: 'VISIT', icon: visitIcon, link: 'https://congratsgrads.web.app'}
+    ];
+    let congratsgrads = <ProjectCard key={1} title='CongratsGrads' techList={this.buildTechCards(congratsgradsTech)}
+    description='Developed an online senior library to honor the class of 2020. Over 200 high school seniors uploaded a profile.'
+    lastUpdated={this.getLastUpdated(this.state.congratsgrads)} actionList={this.buildProjectActions(congratsgradsActions)} />;
 
     let utilityTech = ['Android', 'Java', 'Web API'];
     let utilityActions = [
       {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/Utility-App'},
       {title: 'DOWNLOAD', icon: downloadIcon, link: 'https://play.google.com/store/apps/details?id=com.rt.utility'},
     ];
+    let utility = <ProjectCard key={0} title='Utility' techList={this.buildTechCards(utilityTech)}
+    description='Wrote an Android Utility app that features several programs. Used asynchronous tasks in Java, a SQLite database, and a web API.'
+    lastUpdated={this.getLastUpdated(this.state.utility)} actionList={this.buildProjectActions(utilityActions)} />;
 
-    return [
-      <ProjectCard key={0} title='Utility' techList={this.buildTechCards(utilityTech)}
-        description='Wrote an Android Utility app that features several programs. Used asynchronous tasks in Java, a SQLite database, and a web API.'
-        lastUpdated={this.getLastUpdated(this.state.utility)} actionList={this.buildProjectActions(utilityActions)} />
+    let testAutomationTech = ['NightwatchJS', 'TypeScript', 'SQL'];
+    let testAutomation = <ProjectCard key={2} title='Test Automation' techList={this.buildTechCards(testAutomationTech)}
+    description='Responsible for designing, building, and managing a test automation application at Hagerty to ensure that Salesforce apps and web processes were fully functional in multiple environments.'
+    lastUpdated={null} actionList={null} />;
+
+    let pollertronTech = ['ASP.NET MVC', 'C#', 'JavaScript', 'HTML5', 'CSS', 'D3.js', 'Bootstrap', 'Material Design Lite', 'RivetsJS', 'Solr', 'SQL', 'SOQL'];
+    let pollertron = <ProjectCard key={3} title='Pollertron' techList={this.buildTechCards(pollertronTech)}
+    description='Built a data validation tool at Hagerty to check if the data in Salesforce matches the data in a SQL database. Designed the frontend views and backend solutions.'
+    lastUpdated={null} actionList={null} />;
+
+    let stockInsightTech = ['WPF', 'C#', 'MongoDB', 'Web API'];
+    let stockInsightActions = [
+      {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/Stock-Insight'},
+      {title: 'DEMO', icon: youtubeIcon, link: 'https://www.youtube.com/watch?v=sv_gQ37-n-w&feature=youtu.be'}
     ];
+    let stockInsight = <ProjectCard key={4} title='Stock Insight' techList={this.buildTechCards(stockInsightTech)}
+    description='Developed a simple, responsive WPF stock application that includes persistence and real-time stock data.'
+    lastUpdated={this.getLastUpdated(this.state.stockinsight)} actionList={this.buildProjectActions(stockInsightActions)} />;
+
+    let chatversityTech = ['Angular', 'HTML5', 'CSS', 'TypeScript', 'Bootstrap', 'NodeJS', 'Okta', 'Pusher Chatkit'];
+    let chatversityActions = [
+      {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/Chatversity_App'},
+      {title: 'DEMO', icon: youtubeIcon, link: 'https://www.youtube.com/watch?v=M9QC3khGWIA'}
+    ];
+    let chatversity = <ProjectCard key={4} title='Chatversity' techList={this.buildTechCards(chatversityTech)}
+    description='Designed and built an Angular 7 messaging app with a team. The product features user authentication, messaging, adding connections, user online status, and join/leave/delete room. We also created a static website to promote and support the web app.'
+    lastUpdated={null} actionList={this.buildProjectActions(chatversityActions)} />;
+
+    let pyemailcollegeTech = ['Python'];
+    let pyemailcollegeActions = [
+      {title: 'GitHub', icon: githubIcon, link: 'https://github.com/tarkowr/PyEmailCollege'}
+    ];
+    let pyemailcollege = <ProjectCard key={5} title='PyEmailCollege' techList={this.buildTechCards(pyemailcollegeTech)}
+    description='Wrote a Python script to send an email to every university in a country. It sends the email through the G-Mail service and uses the Python Universities package to get each university domain.'
+    lastUpdated={this.getLastUpdated(this.state.pyemailcollege)} actionList={this.buildProjectActions(pyemailcollegeActions)} />;
+
+    let eportfolioTech = ['React', 'HTML5', 'CSS', 'JavaScript'];
+    let eportfolioActions = [
+      {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/E-Portfolio-3.0'}
+    ];
+    let eportfolio = <ProjectCard key={6} title='E-Portfolio' techList={this.buildTechCards(eportfolioTech)}
+    description='Built this website from scratch using several web technologies.'
+    lastUpdated={this.getLastUpdated(this.state.eportfolio)} actionList={this.buildProjectActions(eportfolioActions)} />;
+  
+    return [congratsgrads, utility, testAutomation, pollertron, stockInsight, chatversity, pyemailcollege, eportfolio];
   }
 
   buildTechCards(techTitles = []) {
@@ -76,7 +130,11 @@ export default class Projects extends React.Component {
 
   getProjectData(data) {
     this.setState({
-      utility: this.parseGitHubProject(data, 'Utility-App')
+      utility: this.parseGitHubProject(data, 'Utility-App'),
+      congratsgrads: this.parseGitHubProject(data, 'Congrats-Grads'),
+      stockinsight: this.parseGitHubProject(data, 'Stock-Insight'),
+      pyemailcollege: this.parseGitHubProject(data, 'PyEmailCollege'),
+      eportfolio: this.parseGitHubProject(data, 'E-Portfolio-3.0')
     });
   }
 
