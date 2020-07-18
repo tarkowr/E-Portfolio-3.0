@@ -62,7 +62,7 @@ export default class Landing extends React.Component {
 class LinkCard extends React.Component {
   render() {
     return (
-      <a className={`splash-link ${this.props.cardClass}`} href={this.props.link} target="_blank"
+      <a className={`splash-link ${this.props.cardClass}`} href={this.props.link} target="_blank" rel="noopener noreferrer"
       onMouseOver={this.props.onMouseOver} onMouseOut={this.props.onMouseOut}>
         { this.props.icon }
       </a>

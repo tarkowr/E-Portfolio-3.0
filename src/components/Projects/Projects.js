@@ -5,6 +5,8 @@ import './Projects.css';
 
 export default class Projects extends React.Component {
 
+  projectList = [];
+
   state = {
     filter: null,
     congratsgrads: null,
@@ -17,8 +19,8 @@ export default class Projects extends React.Component {
   getProjectList() {
     const githubIcon = <i className="fa fa-code"></i>;
     const downloadIcon = <i className="fa fa-arrow-down"></i>;
-    const visitIcon = <i class="fa fa-chevron-circle-right"></i>;
-    const youtubeIcon = <i class="fa fa-youtube-play"></i>;
+    const visitIcon = <i className="fa fa-chevron-circle-right"></i>;
+    const youtubeIcon = <i className="fa fa-youtube-play"></i>;
 
     let congratsgradsTech = ['Angular', 'HTML5', 'CSS', 'TypeScript', 'Bootstrap', 'NodeJS', 'Firebase'];
     let congratsgradsActions = [
@@ -62,7 +64,7 @@ export default class Projects extends React.Component {
       {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/Chatversity_App'},
       {title: 'DEMO', icon: youtubeIcon, link: 'https://www.youtube.com/watch?v=M9QC3khGWIA'}
     ];
-    let chatversity = <ProjectCard key={4} title='Chatversity' techList={this.buildTechCards(chatversityTech)}
+    let chatversity = <ProjectCard key={5} title='Chatversity' techList={this.buildTechCards(chatversityTech)}
     description='Designed and built an Angular 7 messaging app with a team. The product features user authentication, messaging, adding connections, user online status, and join/leave/delete room. We also created a static website to promote and support the web app.'
     lastUpdated={null} actionList={this.buildProjectActions(chatversityActions)} />;
 
@@ -70,7 +72,7 @@ export default class Projects extends React.Component {
     let pyemailcollegeActions = [
       {title: 'GitHub', icon: githubIcon, link: 'https://github.com/tarkowr/PyEmailCollege'}
     ];
-    let pyemailcollege = <ProjectCard key={5} title='PyEmailCollege' techList={this.buildTechCards(pyemailcollegeTech)}
+    let pyemailcollege = <ProjectCard key={6} title='PyEmailCollege' techList={this.buildTechCards(pyemailcollegeTech)}
     description='Wrote a Python script to send an email to every university in a country. It sends the email through the G-Mail service and uses the Python Universities package to get each university domain.'
     lastUpdated={this.getLastUpdated(this.state.pyemailcollege)} actionList={this.buildProjectActions(pyemailcollegeActions)} />;
 
@@ -78,10 +80,10 @@ export default class Projects extends React.Component {
     let eportfolioActions = [
       {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/E-Portfolio-3.0'}
     ];
-    let eportfolio = <ProjectCard key={6} title='E-Portfolio' techList={this.buildTechCards(eportfolioTech)}
+    let eportfolio = <ProjectCard key={7} title='E-Portfolio' techList={this.buildTechCards(eportfolioTech)}
     description='Built this website from scratch using several web technologies.'
     lastUpdated={this.getLastUpdated(this.state.eportfolio)} actionList={this.buildProjectActions(eportfolioActions)} />;
-  
+
     return [congratsgrads, utility, testAutomation, pollertron, stockInsight, chatversity, pyemailcollege, eportfolio];
   }
 
@@ -149,7 +151,7 @@ export default class Projects extends React.Component {
   }
 
   render() {
-    let projectList = this.getProjectList();
+    this.projectList = this.getProjectList();
 
     return (
       <div id="projects-component" className="Projects py-5 text-white">
@@ -158,7 +160,7 @@ export default class Projects extends React.Component {
           <div className="mx-3 my-5">
             <div className="row mx-0">
               <div className="col-12 col-lg-8 offset-lg-2">
-                {projectList}
+                {this.projectList}
               </div>
             </div>
           </div>
@@ -207,7 +209,7 @@ TechCard.propTypes = {
 class ProjectButton extends React.Component {
   render() {
     return(
-      <a target="_blank" href={this.props.link}>
+      <a target="_blank" rel="noopener noreferrer" href={this.props.link}>
         <button className="ProjectButton text-dark border-0 mr-3">{this.props.title} {this.props.icon}</button>
       </a>
     );

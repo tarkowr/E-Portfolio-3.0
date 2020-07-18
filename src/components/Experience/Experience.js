@@ -59,7 +59,7 @@ class ExperienceCard extends React.Component {
   render() {
     return (
       <div className="w-100 d-flex py-2">
-        <img className="experience-card-image" src={this.props.imagePath} />
+        <img className="experience-card-image" src={this.props.imagePath} alt='Experience Icon' />
         <div className="ml-3">
           <div className="experience-card-title">
             { this.props.title }

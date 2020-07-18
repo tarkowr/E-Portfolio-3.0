@@ -13,7 +13,7 @@ export default class About extends React.Component {
             </div>
           </div>
           <div className="mt-5">
-            <a href="/Tarkowski_Resume.pdf" target="_blank"><button className="custom-btn">View Resume</button></a>
+            <a href="/Tarkowski_Resume.pdf" target="_blank" rel="noopener noreferrer"><button className="custom-btn">View Resume</button></a>
           </div>
         </div>
       </div>
