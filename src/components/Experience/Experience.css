@@ -8,10 +8,10 @@
 }
 .experience-card-date {
     font-size: 1.2em;
-    font-weight: 400;
+    font-weight: 300;
 }
 .experience-card-description {
-    font-weight: 400;
+    font-weight: 300;
 }
 @media (max-width: 991px) {
     .experience-card-image {

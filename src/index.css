@@ -11,3 +11,6 @@ html, body, #root {
 .h1 {
     font-weight: 200 !important;
 }
+a {
+    text-decoration: none !important;
+}
