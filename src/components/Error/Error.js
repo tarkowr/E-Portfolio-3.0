@@ -13,7 +13,7 @@ export default class Error extends React.Component {
                 404
               </div>
               <div className="mt-4 h5">
-                The requested content is not available.
+                The requested content is not available
               </div>
               <div className="mt-5">
                 <RTButton label='Return Home' href='/' />
