@@ -16,6 +16,9 @@
 .project-title {
     font-size: 1.8em;
 }
+.extra-rounded {
+    border-radius: 10px;
+}
 .TechCard {
     font-family: "Staatliches", "Muli", sans-serif;
     background-color: #394048 !important;

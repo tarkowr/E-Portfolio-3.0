@@ -5,10 +5,17 @@ import './Projects.css';
 
 export default class Projects extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.handleFilterChange = this.handleFilterChange.bind(this);
+    this.state.projectFilter = this.filters[0];
+  }
+
   projectList = [];
+  filters = ['Display All', 'ASP.NET MVC', 'Android', 'Angular', 'C#', 'CSS', 'Firebase', 'HTML5', 'Java', 'NodeJS', 'Python', 'React', 'SQL', 'TypeScript'];
 
   state = {
-    filter: null,
+    projectFilter: '',
     congratsgrads: null,
     utility: null,
     stockinsight: null,
@@ -27,7 +34,7 @@ export default class Projects extends React.Component {
       {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/Congrats-Grads'},
       {title: 'VISIT', icon: visitIcon, link: 'https://congratsgrads.web.app'}
     ];
-    let congratsgrads = <ProjectCard key={1} title='CongratsGrads' techList={this.buildTechCards(congratsgradsTech)}
+    let congratsgrads = <ProjectCard key={0} title='CongratsGrads' techList={this.buildTechCards(congratsgradsTech)}
     description='Developed an online senior library to honor the class of 2020. Over 200 high school seniors uploaded a profile.'
     lastUpdated={this.getLastUpdated(this.state.congratsgrads)} actionList={this.buildProjectActions(congratsgradsActions)} />;
 
@@ -36,7 +43,7 @@ export default class Projects extends React.Component {
       {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/Utility-App'},
       {title: 'DOWNLOAD', icon: downloadIcon, link: 'https://play.google.com/store/apps/details?id=com.rt.utility'},
     ];
-    let utility = <ProjectCard key={0} title='Utility' techList={this.buildTechCards(utilityTech)}
+    let utility = <ProjectCard key={1} title='Utility' techList={this.buildTechCards(utilityTech)}
     description='Wrote an Android Utility app that features several programs. Used asynchronous tasks in Java, a SQLite database, and a web API.'
     lastUpdated={this.getLastUpdated(this.state.utility)} actionList={this.buildProjectActions(utilityActions)} />;
 
@@ -91,7 +98,9 @@ export default class Projects extends React.Component {
     let techList = [];
 
     for (let i=0; i<techTitles.length; i++) {
-      techList.push(<TechCard key={i} title={techTitles[i]} />);
+      const title = techTitles[i];
+      if (!title) continue;
+      techList.push(<TechCard key={i} title={title} />);
     }
 
     return techList;
@@ -101,7 +110,13 @@ export default class Projects extends React.Component {
     let actions = [];
 
     for (let i=0; i<projectActions.length; i++) {
-      actions.push(<ProjectButton key={i} title={projectActions[i].title} icon={projectActions[i].icon} link={projectActions[i].link} />);
+      const title = projectActions[i].title;
+      const icon = projectActions[i].icon;
+      const link = projectActions[i].link;
+
+      if (!title || !icon || !link) continue;
+
+      actions.push(<ProjectButton key={i} title={title} icon={icon} link={link} />);
     }
 
     return actions;
@@ -146,12 +161,37 @@ export default class Projects extends React.Component {
     return githubData.find(project => project.name === projectName);
   }
 
+  buildFilterOptions() {
+    let options = [];
+
+    this.filters.forEach(option =>
+      options.push(<option key={option} value={option}>{option}</option>)
+    );
+
+    return options;
+  }
+
+  handleFilterChange(event) {
+    this.setState({projectFilter: event.target.value});
+  }
+
+  filterProjects() {
+    if(this.state.projectFilter !== '' && this.state.projectFilter !== this.filters[0]) {
+      this.projectList = this.projectList.filter(project => 
+        project?.props?.techList?.filter(tech => 
+          tech?.props?.title === this.state.projectFilter
+        )?.length > 0
+      );
+    }
+  }
+
   componentDidMount() {
     this.fetchGitHubProjectData();
   }
 
   render() {
     this.projectList = this.getProjectList();
+    this.filterProjects();
 
     return (
       <div id="projects-component" className="Projects py-5 text-white">
@@ -160,6 +200,11 @@ export default class Projects extends React.Component {
           <div className="mx-3 my-5">
             <div className="row mx-0">
               <div className="col-12 col-lg-8 offset-lg-2">
+                <div className="mb-3 text-left">
+                  <select className="p-2 extra-rounded" onChange={this.handleFilterChange} value={this.state.projectFilter}>
+                    {this.buildFilterOptions()}
+                  </select>
+                </div>
                 {this.projectList}
               </div>
             </div>
@@ -177,7 +222,7 @@ class ProjectCard extends React.Component {
     return (
       <div className="ProjectCard text-left d-inline-block text-white w-100">
         <div className="project-title">{this.props.title}</div>
-        <div>{this.props.techList}</div>
+        <div className="mt-3">{this.props.techList}</div>
         <div className="my-3">{this.props.description}</div>
         <div className="pb-2">{lastUpdatedText}</div>
         <div className="mt-2">{this.props.actionList}</div>
@@ -197,7 +242,7 @@ ProjectCard.propTypes = {
 class TechCard extends React.Component {
   render() {
     return(
-      <div className="TechCard text-white px-2 py-1 mt-3 mr-1 d-inline-block">{this.props.title}</div>
+      <div className="TechCard text-white px-2 py-1 mt-1 mr-1 d-inline-block">{this.props.title}</div>
     );
   }
 }
