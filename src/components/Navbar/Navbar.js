@@ -5,7 +5,6 @@ export default class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = { width: window.innerWidth };
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
   maxScroll = 100;
@@ -15,24 +14,17 @@ export default class Navbar extends React.Component {
     isScrolledNav: false
   }
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
-    window.addEventListener('resize', this.updateWindowDimensions);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-    window.removeEventListener('resize', this.updateWindowDimensions);
-  }
-
-  updateWindowDimensions() {
+  // Handle resize window event.
+  handleResize = () => {
     let width = window.innerWidth;
+
     if ((width >= this.minWidth && this.state.width < this.minWidth) || (width < this.minWidth && this.state.width >= this.minWidth)){
       this.setState({ width: window.innerWidth });
     }
   }
 
-  handleScroll = (e) => {
+  // Handle window scroll event.
+  handleScroll = () => {
     let scroll = window.pageYOffset;
 
     if (!this.state.isScrolledNav && scroll > this.maxScroll) {
@@ -43,6 +35,7 @@ export default class Navbar extends React.Component {
     }
   }
 
+  // Build the navbar for mobile users.
   buildMobileNav() {
     return (
       <div className="Navbar scrolled-nav w-100 text-left">
@@ -51,6 +44,7 @@ export default class Navbar extends React.Component {
     );
   }
 
+  // Build the navbar for desktop users.
   buildDesktopNav() {
     let navClass = this.state.isScrolledNav ? 'scrolled-nav' : 'landing-nav';
 
@@ -62,6 +56,16 @@ export default class Navbar extends React.Component {
         <a href="#projects-component" className="nav-link">Projects</a>
       </div>
     );
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('resize', this.handleResize);
   }
 
   render() {

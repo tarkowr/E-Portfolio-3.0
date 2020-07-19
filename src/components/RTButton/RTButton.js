@@ -7,11 +7,11 @@ export default class RTButton extends React.Component {
   render() {
     return (
         <a className="RTButton" href={this.props.href}>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            { this.props.label }
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          { this.props.label }
         </a>
     );
   }

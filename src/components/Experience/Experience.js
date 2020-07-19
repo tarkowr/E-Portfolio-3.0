@@ -3,10 +3,13 @@ import PropTypes from 'prop-types';
 import './Experience.css';
 
 export default class Experience extends React.Component {
+
+  // Build an experience group title.
   buildGroupTitle(title) {
     return <div className="h5 bg-dark text-white group-title mb-3 py-2 px-3">{ title }</div>
   }
 
+  // Build the education experience group.
   buildEducationGroup() {
     return (
       <div>
@@ -20,6 +23,7 @@ export default class Experience extends React.Component {
     );
   }
 
+  // Build the work experience group.
   buildWorkExperienceGroup() {
     return (
       <div className="mt-4">

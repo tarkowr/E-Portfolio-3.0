@@ -23,7 +23,8 @@ export default class Projects extends React.Component {
     eportfolio: null,
   }
 
-  getProjectList() {
+  // Build a list of all projects.
+  buildProjectList() {
     const githubIcon = <i className="fa fa-code"></i>;
     const downloadIcon = <i className="fa fa-arrow-down"></i>;
     const visitIcon = <i className="fa fa-chevron-circle-right"></i>;
@@ -36,7 +37,7 @@ export default class Projects extends React.Component {
     ];
     let congratsgrads = <ProjectCard key={0} title='CongratsGrads' techList={this.buildTechCards(congratsgradsTech)}
     description='Developed an online senior library to honor the class of 2020. Over 200 high school seniors uploaded a profile.'
-    lastUpdated={this.getLastUpdated(this.state.congratsgrads)} actionList={this.buildProjectActions(congratsgradsActions)} />;
+    lastUpdated={this.formatProjectLastUpdated(this.state.congratsgrads)} actionList={this.buildProjectActions(congratsgradsActions)} />;
 
     let utilityTech = ['Android', 'Java', 'Web API'];
     let utilityActions = [
@@ -45,7 +46,7 @@ export default class Projects extends React.Component {
     ];
     let utility = <ProjectCard key={1} title='Utility' techList={this.buildTechCards(utilityTech)}
     description='Wrote an Android Utility app that features several programs. Used asynchronous tasks in Java, a SQLite database, and a web API.'
-    lastUpdated={this.getLastUpdated(this.state.utility)} actionList={this.buildProjectActions(utilityActions)} />;
+    lastUpdated={this.formatProjectLastUpdated(this.state.utility)} actionList={this.buildProjectActions(utilityActions)} />;
 
     let testAutomationTech = ['NightwatchJS', 'TypeScript', 'SQL'];
     let testAutomation = <ProjectCard key={2} title='Test Automation' techList={this.buildTechCards(testAutomationTech)}
@@ -64,7 +65,7 @@ export default class Projects extends React.Component {
     ];
     let stockInsight = <ProjectCard key={4} title='Stock Insight' techList={this.buildTechCards(stockInsightTech)}
     description='Developed a simple, responsive WPF stock application that includes persistence and real-time stock data.'
-    lastUpdated={this.getLastUpdated(this.state.stockinsight)} actionList={this.buildProjectActions(stockInsightActions)} />;
+    lastUpdated={this.formatProjectLastUpdated(this.state.stockinsight)} actionList={this.buildProjectActions(stockInsightActions)} />;
 
     let chatversityTech = ['Angular', 'HTML5', 'CSS', 'TypeScript', 'Bootstrap', 'NodeJS', 'Okta', 'Pusher Chatkit'];
     let chatversityActions = [
@@ -81,7 +82,7 @@ export default class Projects extends React.Component {
     ];
     let pyemailcollege = <ProjectCard key={6} title='PyEmailCollege' techList={this.buildTechCards(pyemailcollegeTech)}
     description='Wrote a Python script to send an email to every university in a country. It sends the email through the G-Mail service and uses the Python Universities package to get each university domain.'
-    lastUpdated={this.getLastUpdated(this.state.pyemailcollege)} actionList={this.buildProjectActions(pyemailcollegeActions)} />;
+    lastUpdated={this.formatProjectLastUpdated(this.state.pyemailcollege)} actionList={this.buildProjectActions(pyemailcollegeActions)} />;
 
     let eportfolioTech = ['React', 'HTML5', 'CSS', 'JavaScript'];
     let eportfolioActions = [
@@ -89,11 +90,12 @@ export default class Projects extends React.Component {
     ];
     let eportfolio = <ProjectCard key={7} title='E-Portfolio' techList={this.buildTechCards(eportfolioTech)}
     description='Built this website from scratch using several web technologies.'
-    lastUpdated={this.getLastUpdated(this.state.eportfolio)} actionList={this.buildProjectActions(eportfolioActions)} />;
+    lastUpdated={this.formatProjectLastUpdated(this.state.eportfolio)} actionList={this.buildProjectActions(eportfolioActions)} />;
 
     return [congratsgrads, utility, testAutomation, pollertron, stockInsight, chatversity, pyemailcollege, eportfolio];
   }
 
+  // Builds a list of project tech cards.
   buildTechCards(techTitles = []) {
     let techList = [];
 
@@ -106,6 +108,7 @@ export default class Projects extends React.Component {
     return techList;
   }
 
+  // Builds a list of project action buttons.
   buildProjectActions(projectActions = []) {
     let actions = [];
 
@@ -122,19 +125,37 @@ export default class Projects extends React.Component {
     return actions;
   }
 
-  fetchGitHubProjectData() {
+  // Retrieves github data via web api.
+  async fetchGitHubData() {
     const url = 'https://api.github.com/users/tarkowr/repos';
 
-    axios.get(url)
-    .then(response => {
-      this.getProjectData(response.data);
-    })
-    .catch(error => {
-      console.log(error);
+    let response = await axios.get(url).catch(error => console.log(error));
+
+    if (response) {
+      this.updateProjectState(response.data);
+    }
+  }
+
+  // Update state with github data for each project.
+  updateProjectState(data) {
+    this.setState({
+      utility: this.parseGitHubProject(data, 'Utility-App'),
+      congratsgrads: this.parseGitHubProject(data, 'Congrats-Grads'),
+      stockinsight: this.parseGitHubProject(data, 'Stock-Insight'),
+      pyemailcollege: this.parseGitHubProject(data, 'PyEmailCollege'),
+      eportfolio: this.parseGitHubProject(data, 'E-Portfolio-3.0')
     });
   }
 
-  getLastUpdated(projectData) {
+  // Get data for a project from the retrieved github data.
+  parseGitHubProject(githubData, projectName) {
+    if (projectName === null || githubData.length === 0) return null;
+
+    return githubData.find(project => project.name === projectName);
+  }
+
+  // Get and format the last updated field from a project.
+  formatProjectLastUpdated(projectData) {
     if (!projectData) return null;
 
     let repoLastUpdated = new Date(projectData.updated_at);
@@ -145,22 +166,7 @@ export default class Projects extends React.Component {
     return (month + 1) + '-' + date + '-' + year;
   }
 
-  getProjectData(data) {
-    this.setState({
-      utility: this.parseGitHubProject(data, 'Utility-App'),
-      congratsgrads: this.parseGitHubProject(data, 'Congrats-Grads'),
-      stockinsight: this.parseGitHubProject(data, 'Stock-Insight'),
-      pyemailcollege: this.parseGitHubProject(data, 'PyEmailCollege'),
-      eportfolio: this.parseGitHubProject(data, 'E-Portfolio-3.0')
-    });
-  }
-
-  parseGitHubProject(githubData, projectName) {
-    if (projectName === null || githubData.length === 0) return null;
-
-    return githubData.find(project => project.name === projectName);
-  }
-
+  // Builds a list of project filter options.
   buildFilterOptions() {
     let options = [];
 
@@ -171,10 +177,12 @@ export default class Projects extends React.Component {
     return options;
   }
 
+  // Update state when a new filter is selected.
   handleFilterChange(event) {
     this.setState({projectFilter: event.target.value});
   }
 
+  // Filter the project list by the selected filter.
   filterProjects() {
     if(this.state.projectFilter !== '' && this.state.projectFilter !== this.filters[0]) {
       this.projectList = this.projectList.filter(project => 
@@ -186,11 +194,11 @@ export default class Projects extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchGitHubProjectData();
+    this.fetchGitHubData();
   }
 
   render() {
-    this.projectList = this.getProjectList();
+    this.projectList = this.buildProjectList();
     this.filterProjects();
 
     return (

@@ -20,18 +20,21 @@ export default class Landing extends React.Component {
     linkLabel: <div></div>
   }
 
+  // Handle link mouse over event.
   onLinkMouseOver = (label) => {
     this.setState({
       linkLabel: <div className="w-100 text-center text-white pt-3 link-hover-label">{label}</div>
     });
   }
 
+  // Handle link mouse out event.
   onLinkMouseOut = () => {
     this.setState({
       linkLabel: <div></div>
     });
   }
 
+  // Build landing link buttons.
   buildLinkButtons = () => {
     return (
       <div className="mt-5 pt-5">
