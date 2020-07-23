@@ -45,7 +45,7 @@ export default class Experience extends React.Component {
       <div id="experience-component" className="Experience py-5">
         <div className="my-5 text-center">
           <div className="h1">&mdash; Experience &mdash;</div>
-          <div className="mx-3 my-5">
+          <div className="mx-1 my-5">
             <div className="row mx-0">
               <div className="col-12 col-lg-8 offset-lg-2 text-left">
                 { this.buildEducationGroup() }

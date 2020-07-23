@@ -205,7 +205,7 @@ export default class Projects extends React.Component {
       <div id="projects-component" className="Projects py-5 text-white">
         <div className="my-5 text-center">
           <div className="h1">&mdash; Projects &mdash;</div>
-          <div className="mx-3 my-5">
+          <div className="my-5">
             <div className="row mx-0">
               <div className="col-12 col-lg-8 offset-lg-2">
                 <div className="mb-3 text-left">
