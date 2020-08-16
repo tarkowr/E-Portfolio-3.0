@@ -12,7 +12,7 @@ export default class Projects extends React.Component {
   }
 
   projectList = [];
-  filters = ['Display All', 'ASP.NET MVC', 'Android', 'Angular', 'C#', 'CSS', 'Firebase', 'HTML5', 'Java', 'NodeJS', 'Python', 'React', 'SQL', 'TypeScript'];
+  filters = ['Display All', 'ASP.NET MVC', 'Android', 'Angular', 'C#', 'CSS', 'Cybersecurity', 'Firebase', 'HTML5', 'Java', 'NodeJS', 'Python', 'React', 'SQL', 'TypeScript'];
 
   state = {
     projectFilter: '',
@@ -30,69 +30,77 @@ export default class Projects extends React.Component {
     const visitIcon = <i className="fa fa-chevron-circle-right"></i>;
     const youtubeIcon = <i className="fa fa-youtube-play"></i>;
 
-    let congratsgradsTech = ['Angular', 'HTML5', 'CSS', 'TypeScript', 'Bootstrap', 'NodeJS', 'Firebase'];
-    let congratsgradsActions = [
+    const congratsgradsTech = ['Angular', 'HTML5', 'CSS', 'TypeScript', 'Bootstrap', 'NodeJS', 'Firebase'];
+    const congratsgradsActions = [
       {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/Congrats-Grads'},
       {title: 'VISIT', icon: visitIcon, link: 'https://congratsgrads.web.app'}
     ];
-    let congratsgrads = <ProjectCard key={0} title='CongratsGrads' techList={this.buildTechCards(congratsgradsTech)}
+    const congratsgrads = <ProjectCard key={0} title='CongratsGrads' techList={this.buildTechCards(congratsgradsTech)}
     description='Developed an online senior library to honor the class of 2020. Over 200 high school seniors uploaded a profile.'
     lastUpdated={this.formatProjectLastUpdated(this.state.congratsgrads)} actionList={this.buildProjectActions(congratsgradsActions)} />;
 
-    let utilityTech = ['Android', 'Java', 'Web API'];
-    let utilityActions = [
+    const utilityTech = ['Android', 'Java', 'Web API'];
+    const utilityActions = [
       {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/Utility-App'},
       {title: 'DOWNLOAD', icon: downloadIcon, link: 'https://play.google.com/store/apps/details?id=com.rt.utility'},
     ];
-    let utility = <ProjectCard key={1} title='Utility' techList={this.buildTechCards(utilityTech)}
+    const utility = <ProjectCard key={1} title='Utility' techList={this.buildTechCards(utilityTech)}
     description='Wrote an Android Utility app that features several programs. Used asynchronous tasks in Java, a SQLite database, and a web API.'
     lastUpdated={this.formatProjectLastUpdated(this.state.utility)} actionList={this.buildProjectActions(utilityActions)} />;
 
-    let testAutomationTech = ['NightwatchJS', 'TypeScript', 'SQL'];
-    let testAutomation = <ProjectCard key={2} title='Test Automation' techList={this.buildTechCards(testAutomationTech)}
+    const testAutomationTech = ['NightwatchJS', 'TypeScript', 'SQL'];
+    const testAutomation = <ProjectCard key={2} title='Test Automation' techList={this.buildTechCards(testAutomationTech)}
     description='Responsible for designing, building, and managing a test automation application at Hagerty to ensure that Salesforce apps and web processes were fully functional in multiple environments.'
     lastUpdated={null} actionList={null} />;
 
-    let pollertronTech = ['ASP.NET MVC', 'C#', 'JavaScript', 'HTML5', 'CSS', 'D3.js', 'Bootstrap', 'Material Design Lite', 'RivetsJS', 'Solr', 'SQL', 'SOQL'];
-    let pollertron = <ProjectCard key={3} title='Pollertron' techList={this.buildTechCards(pollertronTech)}
+    const pollertronTech = ['ASP.NET MVC', 'C#', 'JavaScript', 'HTML5', 'CSS', 'D3.js', 'Bootstrap', 'Material Design Lite', 'RivetsJS', 'Solr', 'SQL', 'SOQL'];
+    const pollertron = <ProjectCard key={3} title='Pollertron' techList={this.buildTechCards(pollertronTech)}
     description='Built a data validation tool at Hagerty to check if the data in Salesforce matches the data in a SQL database. Designed the frontend views and backend solutions.'
     lastUpdated={null} actionList={null} />;
 
-    let stockInsightTech = ['WPF', 'C#', 'MongoDB', 'Web API'];
-    let stockInsightActions = [
+    const stockInsightTech = ['WPF', 'C#', 'MongoDB', 'Web API'];
+    const stockInsightActions = [
       {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/Stock-Insight'},
       {title: 'DEMO', icon: youtubeIcon, link: 'https://www.youtube.com/watch?v=sv_gQ37-n-w&feature=youtu.be'}
     ];
-    let stockInsight = <ProjectCard key={4} title='Stock Insight' techList={this.buildTechCards(stockInsightTech)}
+    const stockInsight = <ProjectCard key={4} title='Stock Insight' techList={this.buildTechCards(stockInsightTech)}
     description='Developed a simple, responsive WPF stock application that includes persistence and real-time stock data.'
     lastUpdated={this.formatProjectLastUpdated(this.state.stockinsight)} actionList={this.buildProjectActions(stockInsightActions)} />;
 
-    let chatversityTech = ['Angular', 'HTML5', 'CSS', 'TypeScript', 'Bootstrap', 'NodeJS', 'Okta', 'Pusher Chatkit'];
-    let chatversityActions = [
+    const chatversityTech = ['Angular', 'HTML5', 'CSS', 'TypeScript', 'Bootstrap', 'NodeJS', 'Okta', 'Pusher Chatkit'];
+    const chatversityActions = [
       {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/Chatversity_App'},
       {title: 'DEMO', icon: youtubeIcon, link: 'https://www.youtube.com/watch?v=M9QC3khGWIA'}
     ];
-    let chatversity = <ProjectCard key={5} title='Chatversity' techList={this.buildTechCards(chatversityTech)}
+    const chatversity = <ProjectCard key={5} title='Chatversity' techList={this.buildTechCards(chatversityTech)}
     description='Designed and built an Angular 7 messaging app with a team. The product features user authentication, messaging, adding connections, user online status, and join/leave/delete room. We also created a static website to promote and support the web app.'
     lastUpdated={null} actionList={this.buildProjectActions(chatversityActions)} />;
 
-    let pyemailcollegeTech = ['Python'];
-    let pyemailcollegeActions = [
-      {title: 'GitHub', icon: githubIcon, link: 'https://github.com/tarkowr/PyEmailCollege'}
+    const penTestTech = ['Cybersecurity', 'Kali Linux', 'Metasploit', 'Nmap', 'Wireshark', 'Hping3'];
+    const penTestActions = [
+      {title: 'VIEW', icon: visitIcon, link: '/penetration_test_report.pdf'}
     ];
-    let pyemailcollege = <ProjectCard key={6} title='PyEmailCollege' techList={this.buildTechCards(pyemailcollegeTech)}
+    const penTest = <ProjectCard key={6} title='Penetration Test Report' techList={this.buildTechCards(penTestTech)}
+    description='Performed a penetration test using techniques including password cracking, privilege escalation, and DoS against three virtual machines and SQL Injection, vulnerability scanning, and content discovery against two web applications.'
+    lastUpdated={null} actionList={this.buildProjectActions(penTestActions)} />;
+
+    const pyemailcollegeTech = ['Python'];
+    const pyemailcollegeActions = [
+      {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/PyEmailCollege'}
+    ];
+    const pyemailcollege = <ProjectCard key={7} title='PyEmailCollege' techList={this.buildTechCards(pyemailcollegeTech)}
     description='Wrote a Python script to send an email to every university in a country. It sends the email through the G-Mail service and uses the Python Universities package to get each university domain.'
     lastUpdated={this.formatProjectLastUpdated(this.state.pyemailcollege)} actionList={this.buildProjectActions(pyemailcollegeActions)} />;
 
-    let eportfolioTech = ['React', 'HTML5', 'CSS', 'JavaScript'];
-    let eportfolioActions = [
+    const eportfolioTech = ['React', 'HTML5', 'CSS', 'JavaScript'];
+    const eportfolioActions = [
       {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/E-Portfolio-3.0'}
     ];
-    let eportfolio = <ProjectCard key={7} title='E-Portfolio' techList={this.buildTechCards(eportfolioTech)}
+    const eportfolio = <ProjectCard key={8} title='E-Portfolio' techList={this.buildTechCards(eportfolioTech)}
     description='Built this website from scratch using several web technologies.'
     lastUpdated={this.formatProjectLastUpdated(this.state.eportfolio)} actionList={this.buildProjectActions(eportfolioActions)} />;
 
-    return [congratsgrads, utility, testAutomation, pollertron, stockInsight, chatversity, pyemailcollege, eportfolio];
+    return [congratsgrads, utility, testAutomation, pollertron, stockInsight, chatversity, penTest, pyemailcollege, eportfolio];
   }
 
   // Builds a list of project tech cards.
@@ -158,10 +166,10 @@ export default class Projects extends React.Component {
   formatProjectLastUpdated(projectData) {
     if (!projectData) return null;
 
-    let repoLastUpdated = new Date(projectData.updated_at);
-    let date = repoLastUpdated.getDate();
-    let month = repoLastUpdated.getMonth();
-    let year = repoLastUpdated.getFullYear();
+    const repoLastUpdated = new Date(projectData.updated_at);
+    const date = repoLastUpdated.getDate();
+    const month = repoLastUpdated.getMonth();
+    const year = repoLastUpdated.getFullYear();
 
     return (month + 1) + '-' + date + '-' + year;
   }
@@ -225,7 +233,7 @@ export default class Projects extends React.Component {
 
 class ProjectCard extends React.Component {
   render() {
-    let lastUpdatedText = this.props.lastUpdated !== null ? <div><strong>Last Updated: </strong> {this.props.lastUpdated}</div> : '';
+    const lastUpdatedText = this.props.lastUpdated !== null ? <div><strong>Last Updated: </strong> {this.props.lastUpdated}</div> : '';
 
     return (
       <div className="ProjectCard text-left d-inline-block text-white w-100">
