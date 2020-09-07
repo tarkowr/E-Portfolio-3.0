@@ -11,6 +11,8 @@
 # production
 /build
 
+deploy.txt
+
 # misc
 .DS_Store
 .env.local
