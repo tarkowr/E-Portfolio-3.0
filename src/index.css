@@ -14,3 +14,27 @@ html, body, #root {
 a {
     text-decoration: none !important;
 }
+
+.scaled-py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+.scaled-my-5 {
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+}
+
+@media (max-width: 991px) {
+    .h1 {
+        font-size: 2rem !important;
+        font-weight: 300 !important;
+    }
+    .scaled-py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    .scaled-my-5 {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
+    }
+}

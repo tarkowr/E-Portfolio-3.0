@@ -54,10 +54,12 @@
 
 @media (max-width: 991px) {
     .Landing {
-        padding-top: 30%;
+        padding-top: 125px;
+        height: auto !important;
     }
     .name {
-        font-size: 3.5em;
+        font-size: 2.5em;
+        margin-bottom: 10px;
     }
     .title {
         font-size: 1.2em;

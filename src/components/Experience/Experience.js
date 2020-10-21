@@ -42,8 +42,8 @@ export default class Experience extends React.Component {
 
   render() {
     return (
-      <div id="experience-component" className="Experience py-5">
-        <div className="my-5 text-center">
+      <div id="experience-component" className="Experience scaled-py-5">
+        <div className="scaled-my-5 text-center">
           <div className="h1">&mdash; Experience &mdash;</div>
           <div className="mx-1 my-5">
             <div className="row mx-0">

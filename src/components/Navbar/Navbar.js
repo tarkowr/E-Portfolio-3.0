@@ -38,10 +38,26 @@ export default class Navbar extends React.Component {
   // Build the navbar for mobile users.
   buildMobileNav() {
     return (
-      <div className="Navbar scrolled-nav w-100 text-left">
-        <div className="p-3 nav-name">Richie Tarkowski</div>
-      </div>
-    );
+      <nav className="navbar fixed-top navbar-light bg-light border-bottom">
+        <a className="navbar-brand" href="/">Richie Tarkowski</a>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+              <a className="nav-link" href="#about-component">About</a>
+            </li>
+            <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+              <a className="nav-link" href="#experience-component">Experience</a>
+            </li>
+            <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+              <a className="nav-link" href="#projects-component">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    )
   }
 
   // Build the navbar for desktop users.
@@ -49,11 +65,11 @@ export default class Navbar extends React.Component {
     let navClass = this.state.isScrolledNav ? 'scrolled-nav' : 'landing-nav';
 
     return (
-      <div className={`Navbar ${navClass} text-white text-center w-100`}>
+      <div className={`custom-navbar ${navClass} text-white text-center w-100`}>
         <i className="fa fa-bars d-none" id="nav-bars"> </i>
-        <a href="#about-component" className="nav-link">About Me</a>
-        <a href="#experience-component" className="nav-link">Experience</a>
-        <a href="#projects-component" className="nav-link">Projects</a>
+        <a href="#about-component" className="custom-nav-link">About Me</a>
+        <a href="#experience-component" className="custom-nav-link">Experience</a>
+        <a href="#projects-component" className="custom-nav-link">Projects</a>
       </div>
     );
   }

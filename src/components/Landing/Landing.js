@@ -37,7 +37,7 @@ export default class Landing extends React.Component {
   // Build landing link buttons.
   buildLinkButtons = () => {
     return (
-      <div className="mt-5 pt-5">
+      <div className="pt-5">
         <LinkCard cardClass="link-linkedin" link="https://www.linkedin.com/in/richie-tarkowski-273238155" 
           icon={ <i className="fa fa-linkedin"> </i> } onMouseOver={() => this.onLinkMouseOver('LINKEDIN')} onMouseOut={this.onLinkMouseOut} />
         <LinkCard cardClass="link-github" link="https://github.com/tarkowr" 
@@ -55,8 +55,12 @@ export default class Landing extends React.Component {
       <div className="Landing w-100 text-center text-white">
         { this.name }
         { this.title }
-        { this.buildLinkButtons() }
-        { this.state.linkLabel }
+        <div className="pb-5">
+          <div className="py-5">
+            { this.buildLinkButtons() }
+            { this.state.linkLabel }
+          </div>
+        </div>
       </div>
     );
   }

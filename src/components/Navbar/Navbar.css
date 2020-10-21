@@ -1,4 +1,15 @@
-.Navbar {
+/*Bootstrap navbar for mobile*/
+.navbar {
+    font-weight: 300 !important;
+    color: #282828;
+}
+.nav-link {
+    font-size: 18px;
+    font-weight: inherit !important;
+}
+
+/*Custom navbar for desktop*/
+.custom-navbar {
     position: fixed;
     transition: padding-top .5s;
     transition-timing-function: ease;
@@ -27,7 +38,7 @@
 .scrolled-nav > a:hover{
     background-color: #f9f9f9;
 }
-.nav-link {
+.custom-nav-link {
     display: inline-block;
     padding: 15px 70px;
     margin: 0px 0px;

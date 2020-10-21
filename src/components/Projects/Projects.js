@@ -222,8 +222,8 @@ export default class Projects extends React.Component {
     this.filterProjects();
 
     return (
-      <div id="projects-component" className="Projects py-5 text-white">
-        <div className="my-5 text-center">
+      <div id="projects-component" className="Projects scaled-py-5 text-white">
+        <div className="scaled-my-5 text-center">
           <div className="h1">&mdash; Projects &mdash;</div>
           <div className="my-5">
             <div className="row mx-0">
