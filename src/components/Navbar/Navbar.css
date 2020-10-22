@@ -7,6 +7,10 @@
     font-size: 18px;
     font-weight: inherit !important;
 }
+.navbar-toggler-icon {
+    width: 1.35em;
+    height: 1.35em;
+}
 
 /*Custom navbar for desktop*/
 .custom-navbar {
