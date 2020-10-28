@@ -33,7 +33,6 @@ export default class Projects extends React.Component {
     }
 
     const githubIcon = <i className="fa fa-code"></i>;
-    const downloadIcon = <i className="fa fa-arrow-down"></i>;
     const visitIcon = <i className="fa fa-chevron-circle-right"></i>;
     const youtubeIcon = <i className="fa fa-youtube-play"></i>;
 
@@ -49,7 +48,7 @@ export default class Projects extends React.Component {
     const utilityTech = ['Android', 'Java', 'Web API'];
     const utilityActions = [
       {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/Utility-App'},
-      {title: 'DOWNLOAD', icon: downloadIcon, link: 'https://play.google.com/store/apps/details?id=com.rt.utility'},
+      {title: 'GOOGLE PLAY', icon: visitIcon, link: 'https://play.google.com/store/apps/details?id=com.rt.utility'},
     ];
     const utility = <ProjectCard key={nextKey()} title='Utility' techList={this.buildTechCards(utilityTech)}
     description='Wrote an Android Utility app that features several programs. Used asynchronous tasks in Java, a SQLite database, and a web API.'
@@ -66,9 +65,13 @@ export default class Projects extends React.Component {
     lastUpdated={null} actionList={null} />;
 
     const insiderTech = ['Flutter', 'Dart', 'GraphQL'];
+    const insiderActions = [
+      {title: 'APP STORE', icon: visitIcon, link: 'https://apps.apple.com/us/app/hagerty/id386245989'},
+      {title: 'GOOGLE PLAY', icon: visitIcon, link: 'https://play.google.com/store/apps/details?id=com.hagerty.carsthatmatter.android'},
+    ];
     const insider = <ProjectCard key={nextKey()} title='Hagerty Insider App' techList={this.buildTechCards(insiderTech)}
     description={'Developed the Hagerty Insider App on Hagerty\'s mobile team with Flutter. Wrote unit and integration tests as well.'}
-    lastUpdated={null}/>;
+    lastUpdated={null} actionList={this.buildProjectActions(insiderActions)}/>;
 
     const stockInsightTech = ['WPF', 'C#', 'MongoDB', 'Web API'];
     const stockInsightActions = [
@@ -283,7 +286,7 @@ class ProjectButton extends React.Component {
   render() {
     return(
       <a target="_blank" rel="noopener noreferrer" href={this.props.link}>
-        <button className="ProjectButton text-dark border-0 mr-3">{this.props.title} {this.props.icon}</button>
+        <button className="ProjectButton text-dark border-0 mr-3 mt-1">{this.props.title} {this.props.icon}</button>
       </a>
     );
   }
