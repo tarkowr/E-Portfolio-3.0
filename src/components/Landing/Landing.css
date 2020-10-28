@@ -50,6 +50,7 @@
 .link-hover-label {
     font-size: 1.2em;
     font-family: "Staatliches", "Muli", sans-serif;
+    display: inline-block;
 }
 
 @media (max-width: 991px) {
@@ -64,5 +65,8 @@
     }
     .title {
         font-size: 1.2em;
+    }
+    .link-hover-label {
+        display: none;
     }
 }
