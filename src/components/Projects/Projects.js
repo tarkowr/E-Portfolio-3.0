@@ -38,7 +38,6 @@ export default class Projects extends React.Component {
 
     const congratsgradsTech = ['Angular', 'HTML5', 'CSS', 'TypeScript', 'Bootstrap', 'NodeJS', 'Firebase'];
     const congratsgradsActions = [
-      {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/Congrats-Grads'},
       {title: 'VISIT', icon: visitIcon, link: 'https://congratsgrads.web.app'}
     ];
     const congratsgrads = <ProjectCard key={nextKey()} title='CongratsGrads' techList={this.buildTechCards(congratsgradsTech)}
