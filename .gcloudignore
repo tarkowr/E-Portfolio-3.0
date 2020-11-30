@@ -1,0 +1,8 @@
+.git
+.gitignore
+.well-known
+.vscode
+node_modules
+public
+src
+deploy.txt

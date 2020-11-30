@@ -16,7 +16,6 @@ export default class Projects extends React.Component {
 
   state = {
     projectFilter: '',
-    congratsgrads: null,
     utility: null,
     stockinsight: null,
     pyemailcollege: null,
@@ -42,7 +41,7 @@ export default class Projects extends React.Component {
     ];
     const congratsgrads = <ProjectCard key={nextKey()} title='CongratsGrads' techList={this.buildTechCards(congratsgradsTech)}
     description='Developed an online senior library to honor the class of 2020. Over 200 high school seniors uploaded a profile.'
-    lastUpdated={this.formatProjectLastUpdated(this.state.congratsgrads)} actionList={this.buildProjectActions(congratsgradsActions)} />;
+    actionList={this.buildProjectActions(congratsgradsActions)} />;
 
     const utilityTech = ['Android', 'Java', 'Web API'];
     const utilityActions = [
@@ -162,7 +161,6 @@ export default class Projects extends React.Component {
   updateProjectState(data) {
     this.setState({
       utility: this.parseGitHubProject(data, 'Utility-App'),
-      congratsgrads: this.parseGitHubProject(data, 'Congrats-Grads'),
       stockinsight: this.parseGitHubProject(data, 'Stock-Insight'),
       pyemailcollege: this.parseGitHubProject(data, 'PyEmailCollege'),
       eportfolio: this.parseGitHubProject(data, 'E-Portfolio-3.0')

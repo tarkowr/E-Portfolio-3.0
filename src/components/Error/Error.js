@@ -5,8 +5,7 @@ import RTButton from '../RTButton/RTButton';
 export default class Error extends React.Component {
   render() {
     return (
-      <div className="h-100 bg-dark">
-        <div className="h-75 pt-4 w-100 bg-dark d-flex text-center">
+      <div className="h-100 d-flex text-center error-wrapper">
           <div className="w-100 justify-content-center align-self-center">
             <div className="m-auto text-white">
               <div className="display-1">
@@ -20,7 +19,6 @@ export default class Error extends React.Component {
               </div>
             </div>
           </div>
-        </div>
       </div>
     );
   }

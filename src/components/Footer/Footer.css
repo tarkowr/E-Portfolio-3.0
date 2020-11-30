@@ -8,3 +8,12 @@
 .footer-email {
     font-size: 1.5em;
 }
+.star {
+    font-size: 1.75em;
+}
+.star-hover {
+    color: #f4f442;
+}
+.star-nohover {
+    color: #f0f0f0;
+}
