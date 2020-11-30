@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser')
 const express = require('express')
 const path = require('path')
 const uuid = require('uuid')
-const cors = require('cors')
+//const cors = require('cors')
 
 let app = express()
 
@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json())
 app.use(cookieParser())
-app.use(cors()) // DISABLE FOR PROD
+// app.use(cors()) // DISABLE FOR PROD
 
 const aws_config = {
     accessKeyId: process.env.AWS_ACCESS_KEY,
@@ -86,7 +86,8 @@ app.post('/rating/add', async (req, res) => {
 
     const ratingItem = {
         id: userId,
-        rating: rating
+        rating: rating,
+        date: new Date().toISOString()
     }
 
     const params = {

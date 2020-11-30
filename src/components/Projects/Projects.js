@@ -12,7 +12,7 @@ export default class Projects extends React.Component {
   }
 
   projectList = [];
-  filters = ['Display All', 'ASP.NET MVC', 'Android', 'Angular', 'C#', 'Cybersecurity', 'Firebase', 'Flutter', 'Java', 'NodeJS', 'Python', 'React', 'SQL', 'TypeScript'];
+  filters = ['Display All', 'ASP.NET MVC', 'Android', 'Angular', 'C#', 'Cybersecurity', 'DynamoDB', 'Firebase', 'Flutter', 'Java', 'NodeJS', 'Python', 'React', 'SQL', 'TypeScript'];
 
   state = {
     projectFilter: '',
@@ -40,10 +40,10 @@ export default class Projects extends React.Component {
       {title: 'VISIT', icon: visitIcon, link: 'https://congratsgrads.web.app'}
     ];
     const congratsgrads = <ProjectCard key={nextKey()} title='CongratsGrads' techList={this.buildTechCards(congratsgradsTech)}
-    description='Developed an online senior library to honor the class of 2020. Over 200 high school seniors uploaded a profile.'
-    actionList={this.buildProjectActions(congratsgradsActions)} />;
+    description='Developed an online library to honor high school seniors. Over 250 seniors have uploaded a profile so far!'
+    lastUpdated={null} actionList={this.buildProjectActions(congratsgradsActions)} />;
 
-    const utilityTech = ['Android', 'Java', 'Web API'];
+    const utilityTech = ['Android', 'Java'];
     const utilityActions = [
       {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/Utility-App'},
       {title: 'GOOGLE PLAY', icon: visitIcon, link: 'https://play.google.com/store/apps/details?id=com.rt.utility'},
@@ -71,7 +71,7 @@ export default class Projects extends React.Component {
     description={'Developed the Hagerty Insider App on Hagerty\'s mobile team with Flutter. Wrote unit and integration tests as well.'}
     lastUpdated={null} actionList={this.buildProjectActions(insiderActions)}/>;
 
-    const stockInsightTech = ['WPF', 'C#', 'MongoDB', 'Web API'];
+    const stockInsightTech = ['WPF', 'C#', 'MongoDB'];
     const stockInsightActions = [
       {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/Stock-Insight'},
       {title: 'DEMO', icon: youtubeIcon, link: 'https://www.youtube.com/watch?v=sv_gQ37-n-w&feature=youtu.be'}
@@ -105,12 +105,12 @@ export default class Projects extends React.Component {
     description='Wrote a Python script to send an email to every university in a country. It sends the email through the G-Mail service and uses the Python Universities package to get each university domain.'
     lastUpdated={this.formatProjectLastUpdated(this.state.pyemailcollege)} actionList={this.buildProjectActions(pyemailcollegeActions)} />;
 
-    const eportfolioTech = ['React', 'HTML5', 'CSS', 'JavaScript'];
+    const eportfolioTech = ['React', 'HTML5', 'CSS', 'JavaScript', 'NodeJS', 'AWS', 'DynamoDB'];
     const eportfolioActions = [
       {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/E-Portfolio-3.0'}
     ];
     const eportfolio = <ProjectCard key={nextKey()} title='E-Portfolio' techList={this.buildTechCards(eportfolioTech)}
-    description='Built this website from scratch using several web technologies.'
+    description='Built this website from scratch using several web technologies. Ratings stored in Amazon DynamoDB.'
     lastUpdated={this.formatProjectLastUpdated(this.state.eportfolio)} actionList={this.buildProjectActions(eportfolioActions)} />;
 
     return [congratsgrads, utility, testAutomation, pollertron, insider, stockInsight, chatversity, penTest, pyemailcollege, eportfolio];
