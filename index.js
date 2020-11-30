@@ -25,7 +25,7 @@ const aws_config = {
     region: process.env.AWS_REGION
 }
 
-const USER_ID_COOKIE = 'userId'
+const USER_ID_COOKIE = 'rating'
 
 app.get('/rating/get', async (req, res) => {
     let onError = (err) => {
@@ -81,7 +81,6 @@ app.post('/rating/add', async (req, res) => {
     }
 
     userId = uuid.v4()
-    res.cookie(USER_ID_COOKIE, userId)
 
     const docClient = new AWS.DynamoDB.DocumentClient()
 
@@ -100,6 +99,8 @@ app.post('/rating/add', async (req, res) => {
             onError(err)
         }
         
+        let farIntoTheFuture = new Date(new Date().getTime() + (1000*60*60*24*365*10))
+        res.cookie(USER_ID_COOKIE, userId, { expires: farIntoTheFuture, httpOnly: true, secure: true })
         return res.status(200).send()
     })
 })
