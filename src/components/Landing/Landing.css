@@ -41,12 +41,6 @@
 .link-mail:hover{
     color: #eb4034 !important;
 }
-.link-sf{
-    background-color: #00a1e0;
-}
-.link-sf:hover{
-    color: #00a1e0 !important;
-}
 .link-hover-label {
     font-size: 1.2em;
     font-family: "Staatliches", "Muli", sans-serif;

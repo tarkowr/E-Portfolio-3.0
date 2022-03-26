@@ -4,21 +4,12 @@
 .description {
     font-size: 20px;
 }
-.custom-btn {
-    width: 180px;
-    height: 60px;
-    font-size: 1.2em;
-    border-radius: 50px;
-    background-color: #678;
-    color: white;
-    border: none;
-    font-family: 'Staatliches', sans-serif;
-}
-.custom-btn:hover {
-    background-color: rgba(102, 119, 136, .85);
+.heart {
+    color: #FF247F;
 }
 @media (max-width: 991px) {
     .description {
+        font-size: 18px;
         text-align: left !important;
     }
 }

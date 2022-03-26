@@ -14,8 +14,8 @@ export default class Experience extends React.Component {
     return (
       <div>
         { this.buildGroupTitle('EDUCATION') }
-        <ExperienceCard imagePath='/fsu_icon.jpg' title='Ferris State University' date='August 2019 - Present' 
-          description='Studying Information Systems (BA) and Information Security (Min). Key courses include Systems Analysis & Design, Mobile Development, and Ethical Hacking.' />
+        <ExperienceCard imagePath='/fsu_icon.jpg' title='Ferris State University' date='August 2019 - May 2021' 
+          description='Studied Information Systems (BA) and Information Security (Min). Key courses include Systems Analysis & Design, Mobile Development, and Ethical Hacking.' />
         <hr/>
         <ExperienceCard imagePath='/nmc_icon.png' title='Northwestern Michigan College' date='August 2017 - May 2019' 
           description='Studied Computer Information Technology. The core courses focused on web development (HTML, CSS, JavaScript, and PHP) and .NET application development (C#, WPF, and ASP.NET MVC).' />
@@ -29,7 +29,7 @@ export default class Experience extends React.Component {
       <div className="mt-4">
         { this.buildGroupTitle('WORK EXPERIENCE') }
         <ExperienceCard imagePath='/hagerty_icon.png' title='Hagerty'  date='May 2020 - Present' 
-          description={`Developed the Hagerty Insider app with Flutter and Dart on Hagerty's mobile team. Collaborated with other full-time Flutter developers using Git/GitHub and Azure DevOps.`} />
+          description={`Developed the Hagerty app with Flutter and Dart on Hagerty's mobile team. Collaborated with other full-time Flutter developers using Git/GitHub and Azure DevOps.`} />
         <hr />
         <ExperienceCard imagePath='/hagerty_icon.png' title='Hagerty' date='May 2019 - August 2019' 
           description={`Implemented numerous features in an ASP.NET MVC data validation tool with another intern. Also contributed to Hagerty's Agile Accounting web application built with Python and Django.`} />

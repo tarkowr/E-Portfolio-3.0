@@ -1,12 +1,5 @@
-.footer-icon{
-    font-size: 2.75em;
-    color: #282828;
-}
-.footer-icon:hover{
-    color: #4286f4 !important;
-}
 .footer-email {
-    font-size: 1.5em;
+    font-size: 20px;
 }
 .star {
     font-size: 1.75em;

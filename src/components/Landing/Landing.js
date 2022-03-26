@@ -7,7 +7,7 @@ export default class Landing extends React.Component {
   name = <div className="name">Richie Tarkowski</div>;
   title = (
     <div className="title px-2">
-      <Typed strings={['Studying Information Systems', 'Hagerty Software Engineer']}
+      <Typed strings={['Mobile App Developer', 'Flutter Enthusiast', 'Creator of the Versify App']}
         typeSpeed={15} 
         startDelay={0}
         autoInsertCss={true}
@@ -42,8 +42,6 @@ export default class Landing extends React.Component {
           icon={ <i className="fa fa-linkedin"> </i> } onMouseOver={() => this.onLinkMouseOver('LINKEDIN')} onMouseOut={this.onLinkMouseOut} />
         <LinkCard cardClass="link-github" link="https://github.com/tarkowr" 
           icon={ <i className="fa fa-github"> </i> } onMouseOver={() => this.onLinkMouseOver('GITHUB')} onMouseOut={this.onLinkMouseOut} />
-        <LinkCard cardClass="link-sf" link="https://trailhead.com/me/rtarkowski" 
-          icon={ <i className="fa fa-cloud"> </i> } onMouseOver={() => this.onLinkMouseOver('SALESFORCE TRAILHEAD')} onMouseOut={this.onLinkMouseOut} />
         <LinkCard cardClass="link-mail" link="mailto:tarkowr@gmail.com" 
           icon={ <i className="fa fa-envelope-o"> </i> } onMouseOver={() => this.onLinkMouseOver('EMAIL')} onMouseOut={this.onLinkMouseOut} />
       </div>

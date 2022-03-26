@@ -40,7 +40,7 @@ export default class Projects extends React.Component {
       {title: 'VISIT', icon: visitIcon, link: 'https://congratsgrads.web.app'}
     ];
     const congratsgrads = <ProjectCard key={nextKey()} title='CongratsGrads' techList={this.buildTechCards(congratsgradsTech)}
-    description='Developed an online library to honor high school seniors. Over 250 seniors have uploaded a profile so far!'
+    description='Developed an online library to honor high school seniors. Over 800 seniors uploaded a profile!'
     lastUpdated={null} actionList={this.buildProjectActions(congratsgradsActions)} />;
 
     const utilityTech = ['Android', 'Java'];
@@ -52,23 +52,13 @@ export default class Projects extends React.Component {
     description='Wrote an Android Utility app that features several programs. Used asynchronous tasks in Java, a SQLite database, and a web API.'
     lastUpdated={this.formatProjectLastUpdated(this.state.utility)} actionList={this.buildProjectActions(utilityActions)} />;
 
-    const testAutomationTech = ['NightwatchJS', 'TypeScript', 'SQL'];
-    const testAutomation = <ProjectCard key={nextKey()} title='Test Automation' techList={this.buildTechCards(testAutomationTech)}
-    description='Responsible for designing, building, and managing a test automation application at Hagerty to ensure that Salesforce apps and web processes were fully functional in multiple environments.'
-    lastUpdated={null} actionList={null} />;
-
-    const pollertronTech = ['ASP.NET MVC', 'C#', 'JavaScript', 'HTML5', 'CSS', 'D3.js', 'Bootstrap', 'Material Design Lite', 'RivetsJS', 'Solr', 'SQL', 'SOQL'];
-    const pollertron = <ProjectCard key={nextKey()} title='Pollertron' techList={this.buildTechCards(pollertronTech)}
-    description='Built a data validation tool at Hagerty to check if the data in Salesforce matches the data in a SQL database. Designed the frontend views and backend solutions.'
-    lastUpdated={null} actionList={null} />;
-
     const insiderTech = ['Flutter', 'Dart', 'GraphQL'];
     const insiderActions = [
       {title: 'APP STORE', icon: visitIcon, link: 'https://apps.apple.com/us/app/hagerty/id386245989'},
       {title: 'GOOGLE PLAY', icon: visitIcon, link: 'https://play.google.com/store/apps/details?id=com.hagerty.carsthatmatter.android'},
     ];
-    const insider = <ProjectCard key={nextKey()} title='Hagerty Insider App' techList={this.buildTechCards(insiderTech)}
-    description={'Developed the Hagerty Insider App on Hagerty\'s mobile team with Flutter. Wrote unit and integration tests as well.'}
+    const insider = <ProjectCard key={nextKey()} title='Hagerty App' techList={this.buildTechCards(insiderTech)}
+    description={'Developed the Hagerty App on Hagerty\'s mobile team with Flutter. Wrote unit and integration tests as well.'}
     lastUpdated={null} actionList={this.buildProjectActions(insiderActions)}/>;
 
     const stockInsightTech = ['WPF', 'C#', 'MongoDB'];
@@ -113,7 +103,7 @@ export default class Projects extends React.Component {
     description='Built this website from scratch using several web technologies. Ratings stored in Amazon DynamoDB.'
     lastUpdated={this.formatProjectLastUpdated(this.state.eportfolio)} actionList={this.buildProjectActions(eportfolioActions)} />;
 
-    return [congratsgrads, utility, testAutomation, pollertron, insider, stockInsight, chatversity, penTest, pyemailcollege, eportfolio];
+    return [congratsgrads, utility, insider, stockInsight, chatversity, penTest, pyemailcollege, eportfolio];
   }
 
   // Builds a list of project tech cards.
