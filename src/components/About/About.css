@@ -1,6 +1,10 @@
 .About {
     background-color: #fafafa !important;
 }
+.richie-img {
+    width: 200px;
+    border-radius: 50%;
+}
 .description {
     font-size: 20px;
 }

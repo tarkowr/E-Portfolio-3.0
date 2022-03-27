@@ -34,6 +34,17 @@ export default class Projects extends React.Component {
     const githubIcon = <i className="fa fa-code"></i>;
     const visitIcon = <i className="fa fa-chevron-circle-right"></i>;
     const youtubeIcon = <i className="fa fa-youtube-play"></i>;
+    const appleIcon = <i className='fa fa-apple'></i>;
+    const androidIcon = <i className='fa fa-android'></i>;
+
+    const versifyTech = ['Flutter', 'Dart'];
+    const versifyActions = [
+      {title: 'APP STORE', icon: appleIcon, link: 'https://apps.apple.com/us/app/versify-app/id1597230197'},
+      {title: 'GOOGLE PLAY', icon: androidIcon, link: 'https://play.google.com/store/apps/details?id=com.tarkowr.versify'},
+    ];
+    const versify = <ProjectCard key={nextKey()} title='Versify' techList={this.buildTechCards(versifyTech)}
+    description='Built a Bible verse memorization app to make Scripture memory simple and fun.'
+    lastUpdated={null} actionList={this.buildProjectActions(versifyActions)} />;
 
     const congratsgradsTech = ['Angular', 'HTML5', 'CSS', 'TypeScript', 'Bootstrap', 'NodeJS', 'Firebase'];
     const congratsgradsActions = [
@@ -49,13 +60,13 @@ export default class Projects extends React.Component {
       {title: 'GOOGLE PLAY', icon: visitIcon, link: 'https://play.google.com/store/apps/details?id=com.rt.utility'},
     ];
     const utility = <ProjectCard key={nextKey()} title='Utility' techList={this.buildTechCards(utilityTech)}
-    description='Wrote an Android Utility app that features several programs. Used asynchronous tasks in Java, a SQLite database, and a web API.'
+    description='Wrote an Android utility app that features several programs. Used Java asynchronous tasks, a SQLite database, and a web API.'
     lastUpdated={this.formatProjectLastUpdated(this.state.utility)} actionList={this.buildProjectActions(utilityActions)} />;
 
     const insiderTech = ['Flutter', 'Dart', 'GraphQL'];
     const insiderActions = [
-      {title: 'APP STORE', icon: visitIcon, link: 'https://apps.apple.com/us/app/hagerty/id386245989'},
-      {title: 'GOOGLE PLAY', icon: visitIcon, link: 'https://play.google.com/store/apps/details?id=com.hagerty.carsthatmatter.android'},
+      {title: 'APP STORE', icon: appleIcon, link: 'https://apps.apple.com/us/app/hagerty/id386245989'},
+      {title: 'GOOGLE PLAY', icon: androidIcon, link: 'https://play.google.com/store/apps/details?id=com.hagerty.carsthatmatter.android'},
     ];
     const insider = <ProjectCard key={nextKey()} title='Hagerty App' techList={this.buildTechCards(insiderTech)}
     description={'Developed the Hagerty App on Hagerty\'s mobile team with Flutter. Wrote unit and integration tests as well.'}
@@ -103,7 +114,7 @@ export default class Projects extends React.Component {
     description='Built this website from scratch using several web technologies. Ratings stored in Amazon DynamoDB.'
     lastUpdated={this.formatProjectLastUpdated(this.state.eportfolio)} actionList={this.buildProjectActions(eportfolioActions)} />;
 
-    return [congratsgrads, utility, insider, stockInsight, chatversity, penTest, pyemailcollege, eportfolio];
+    return [versify, congratsgrads, utility, insider, stockInsight, chatversity, penTest, pyemailcollege, eportfolio];
   }
 
   // Builds a list of project tech cards.
