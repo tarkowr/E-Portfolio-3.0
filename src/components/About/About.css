@@ -8,9 +8,6 @@
 .description {
     font-size: 20px;
 }
-.heart {
-    color: #FF247F;
-}
 @media (max-width: 991px) {
     .description {
         font-size: 18px;

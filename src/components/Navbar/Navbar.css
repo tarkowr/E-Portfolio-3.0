@@ -2,7 +2,7 @@
 .navbar {
     font-weight: 300 !important;
     color: #282828;
-    background-color: rgba(255, 255, 255, 0.95) !important;
+    background-color: rgba(255, 255, 255, 0.90) !important;
     backdrop-filter: blur(14px);
 
 }
@@ -35,7 +35,7 @@
     background-color: rgba(255, 255, 255, .1);
 }
 .scrolled-nav {
-    background-color: rgba(255, 255, 255, 0.95) !important;
+    background-color: rgba(255, 255, 255, 0.90) !important;
     backdrop-filter: blur(14px);
     padding-top: 0px;
     border-bottom: 1px solid #f0f0f0;

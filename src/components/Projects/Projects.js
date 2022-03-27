@@ -230,7 +230,7 @@ export default class Projects extends React.Component {
             <div className="row mx-0">
               <div className="col-12 col-lg-8 offset-lg-2">
                 <div className="mb-3 text-left">
-                  <select className="p-2 extra-rounded" onChange={this.handleFilterChange} value={this.state.projectFilter}>
+                  <select className="p-2 extra-rounded text-dark" onChange={this.handleFilterChange} value={this.state.projectFilter}>
                     {this.buildFilterOptions()}
                   </select>
                 </div>

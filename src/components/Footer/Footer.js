@@ -79,9 +79,13 @@ export default class Footer extends React.Component {
     return (
       <div className="my-5 p-2 text-center">
         <div className="footer-email">You can reach me at<span> <a href="mailto:tarkowr@gmail.com">tarkowr@gmail.com</a> </span></div>
-        <div className="my-4">
+        <div className="mt-4">
           { this.buildStars() }
         </div>
+        <div className='my-4'>
+          Made with <span className='heart'> ♡ </span>
+        </div>
+        <div className="py-2"></div>
       </div> 
     );
   }
