@@ -39,80 +39,80 @@ export default class Projects extends React.Component {
 
     const versifyTech = ['Flutter', 'Dart'];
     const versifyActions = [
-      {title: 'APP STORE', icon: appleIcon, link: 'https://apps.apple.com/us/app/versify-app/id1597230197'},
-      {title: 'GOOGLE PLAY', icon: androidIcon, link: 'https://play.google.com/store/apps/details?id=com.tarkowr.versify'},
+      { title: 'APP STORE', icon: appleIcon, link: 'https://apps.apple.com/us/app/versify-app/id1597230197' },
+      { title: 'GOOGLE PLAY', icon: androidIcon, link: 'https://play.google.com/store/apps/details?id=com.tarkowr.versify' },
     ];
     const versify = <ProjectCard key={nextKey()} title='Versify' techList={this.buildTechCards(versifyTech)}
-    description='Built a Bible verse memorization app to make Scripture memory simple and fun.'
-    lastUpdated={null} actionList={this.buildProjectActions(versifyActions)} />;
+      description='Built a Bible verse memorization app to make Scripture memory simple and fun.'
+      lastUpdated={null} actionList={this.buildProjectActions(versifyActions)} />;
 
     const congratsgradsTech = ['Angular', 'HTML5', 'CSS', 'TypeScript', 'Bootstrap', 'NodeJS', 'Firebase'];
     const congratsgradsActions = [
-      {title: 'VISIT', icon: visitIcon, link: 'https://congratsgrads.web.app'}
+      { title: 'VISIT', icon: visitIcon, link: 'https://congratsgrads.web.app' }
     ];
     const congratsgrads = <ProjectCard key={nextKey()} title='CongratsGrads' techList={this.buildTechCards(congratsgradsTech)}
-    description='Developed an online library to honor high school seniors. Over 800 seniors uploaded a profile!'
-    lastUpdated={null} actionList={this.buildProjectActions(congratsgradsActions)} />;
+      description='Developed an online library to honor high school seniors. Over 800 seniors uploaded a profile!'
+      lastUpdated={null} actionList={this.buildProjectActions(congratsgradsActions)} />;
 
     const utilityTech = ['Android', 'Java'];
     const utilityActions = [
-      {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/Utility-App'},
-      {title: 'GOOGLE PLAY', icon: visitIcon, link: 'https://play.google.com/store/apps/details?id=com.rt.utility'},
+      { title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/Utility-App' },
+      { title: 'GOOGLE PLAY', icon: visitIcon, link: 'https://play.google.com/store/apps/details?id=com.rt.utility' },
     ];
     const utility = <ProjectCard key={nextKey()} title='Utility' techList={this.buildTechCards(utilityTech)}
-    description='Wrote an Android utility app that features several programs. Used Java asynchronous tasks, a SQLite database, and a web API.'
-    lastUpdated={this.formatProjectLastUpdated(this.state.utility)} actionList={this.buildProjectActions(utilityActions)} />;
+      description='Wrote an Android utility app that features several programs. Used Java asynchronous tasks, a SQLite database, and a web API.'
+      lastUpdated={this.formatProjectLastUpdated(this.state.utility)} actionList={this.buildProjectActions(utilityActions)} />;
 
     const insiderTech = ['Flutter', 'Dart', 'GraphQL'];
     const insiderActions = [
-      {title: 'APP STORE', icon: appleIcon, link: 'https://apps.apple.com/us/app/hagerty/id386245989'},
-      {title: 'GOOGLE PLAY', icon: androidIcon, link: 'https://play.google.com/store/apps/details?id=com.hagerty.carsthatmatter.android'},
+      { title: 'APP STORE', icon: appleIcon, link: 'https://apps.apple.com/us/app/hagerty/id386245989' },
+      { title: 'GOOGLE PLAY', icon: androidIcon, link: 'https://play.google.com/store/apps/details?id=com.hagerty.carsthatmatter.android' },
     ];
     const insider = <ProjectCard key={nextKey()} title='Hagerty App' techList={this.buildTechCards(insiderTech)}
-    description={'Developed the Hagerty App on Hagerty\'s mobile team with Flutter. Wrote unit and integration tests as well.'}
-    lastUpdated={null} actionList={this.buildProjectActions(insiderActions)}/>;
+      description={'Developed the Hagerty App on Hagerty\'s mobile team with Flutter. Wrote unit and integration tests as well.'}
+      lastUpdated={null} actionList={this.buildProjectActions(insiderActions)} />;
 
     const stockInsightTech = ['WPF', 'C#', 'MongoDB'];
     const stockInsightActions = [
-      {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/Stock-Insight'},
-      {title: 'DEMO', icon: youtubeIcon, link: 'https://www.youtube.com/watch?v=sv_gQ37-n-w&feature=youtu.be'}
+      { title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/Stock-Insight' },
+      { title: 'DEMO', icon: youtubeIcon, link: 'https://www.youtube.com/watch?v=sv_gQ37-n-w&feature=youtu.be' }
     ];
     const stockInsight = <ProjectCard key={nextKey()} title='Stock Insight' techList={this.buildTechCards(stockInsightTech)}
-    description='Developed a simple, responsive WPF stock application that includes persistence and real-time stock data.'
-    lastUpdated={this.formatProjectLastUpdated(this.state.stockinsight)} actionList={this.buildProjectActions(stockInsightActions)} />;
+      description='Developed a simple, responsive WPF stock application that includes persistence and real-time stock data.'
+      lastUpdated={this.formatProjectLastUpdated(this.state.stockinsight)} actionList={this.buildProjectActions(stockInsightActions)} />;
 
     const chatversityTech = ['Angular', 'HTML5', 'CSS', 'TypeScript', 'Bootstrap', 'NodeJS', 'Okta', 'Pusher Chatkit'];
     const chatversityActions = [
-      {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/Chatversity_App'},
-      {title: 'DEMO', icon: youtubeIcon, link: 'https://www.youtube.com/watch?v=M9QC3khGWIA'}
+      { title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/Chatversity_App' },
+      { title: 'DEMO', icon: youtubeIcon, link: 'https://www.youtube.com/watch?v=M9QC3khGWIA' }
     ];
     const chatversity = <ProjectCard key={nextKey()} title='Chatversity' techList={this.buildTechCards(chatversityTech)}
-    description='Designed and built an Angular 7 messaging app with a team. The product features user authentication, messaging, adding connections, user online status, and join/leave/delete room. We also created a static website to promote and support the web app.'
-    lastUpdated={null} actionList={this.buildProjectActions(chatversityActions)} />;
+      description='Designed and built an Angular 7 messaging app with a team. The product features user authentication, messaging, adding connections, user online status, and join/leave/delete room. We also created a static website to promote and support the web app.'
+      lastUpdated={null} actionList={this.buildProjectActions(chatversityActions)} />;
 
     const penTestTech = ['Cybersecurity', 'Kali Linux', 'Metasploit', 'Nmap', 'Wireshark', 'Hping3'];
     const penTestActions = [
-      {title: 'VIEW', icon: visitIcon, link: '/penetration_test_report.pdf'}
+      { title: 'VIEW', icon: visitIcon, link: '/penetration_test_report.pdf' }
     ];
     const penTest = <ProjectCard key={nextKey()} title='Penetration Test Report' techList={this.buildTechCards(penTestTech)}
-    description='Performed a penetration test using techniques including password cracking, privilege escalation, and DoS against three virtual machines and SQL Injection, vulnerability scanning, and content discovery against two web applications.'
-    lastUpdated={null} actionList={this.buildProjectActions(penTestActions)} />;
+      description='Performed a penetration test using techniques including password cracking, privilege escalation, and DoS against three virtual machines and SQL Injection, vulnerability scanning, and content discovery against two web applications.'
+      lastUpdated={null} actionList={this.buildProjectActions(penTestActions)} />;
 
     const pyemailcollegeTech = ['Python'];
     const pyemailcollegeActions = [
-      {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/PyEmailCollege'}
+      { title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/PyEmailCollege' }
     ];
     const pyemailcollege = <ProjectCard key={nextKey()} title='PyEmailCollege' techList={this.buildTechCards(pyemailcollegeTech)}
-    description='Wrote a Python script to send an email to every university in a country. It sends the email through the G-Mail service and uses the Python Universities package to get each university domain.'
-    lastUpdated={this.formatProjectLastUpdated(this.state.pyemailcollege)} actionList={this.buildProjectActions(pyemailcollegeActions)} />;
+      description='Wrote a Python script to send an email to every university in a country. It sends the email through the G-Mail service and uses the Python Universities package to get each university domain.'
+      lastUpdated={this.formatProjectLastUpdated(this.state.pyemailcollege)} actionList={this.buildProjectActions(pyemailcollegeActions)} />;
 
     const eportfolioTech = ['React', 'HTML5', 'CSS', 'JavaScript', 'NodeJS', 'AWS', 'DynamoDB'];
     const eportfolioActions = [
-      {title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/E-Portfolio-3.0'}
+      { title: 'GITHUB', icon: githubIcon, link: 'https://github.com/tarkowr/E-Portfolio-3.0' }
     ];
     const eportfolio = <ProjectCard key={nextKey()} title='E-Portfolio' techList={this.buildTechCards(eportfolioTech)}
-    description='Built this website from scratch using several web technologies. Ratings stored in Amazon DynamoDB.'
-    lastUpdated={this.formatProjectLastUpdated(this.state.eportfolio)} actionList={this.buildProjectActions(eportfolioActions)} />;
+      description='Built this website from scratch using several web technologies. Ratings stored in Amazon DynamoDB.'
+      lastUpdated={this.formatProjectLastUpdated(this.state.eportfolio)} actionList={this.buildProjectActions(eportfolioActions)} />;
 
     return [versify, congratsgrads, utility, insider, stockInsight, chatversity, penTest, pyemailcollege, eportfolio];
   }
@@ -121,7 +121,7 @@ export default class Projects extends React.Component {
   buildTechCards(techTitles = []) {
     let techList = [];
 
-    for (let i=0; i<techTitles.length; i++) {
+    for (let i = 0; i < techTitles.length; i++) {
       const title = techTitles[i];
       if (!title) continue;
       techList.push(<TechCard key={i} title={title} />);
@@ -134,7 +134,7 @@ export default class Projects extends React.Component {
   buildProjectActions(projectActions = []) {
     let actions = [];
 
-    for (let i=0; i<projectActions.length; i++) {
+    for (let i = 0; i < projectActions.length; i++) {
       const title = projectActions[i].title;
       const icon = projectActions[i].icon;
       const link = projectActions[i].link;
@@ -200,14 +200,14 @@ export default class Projects extends React.Component {
 
   // Update state when a new filter is selected.
   handleFilterChange(event) {
-    this.setState({projectFilter: event.target.value});
+    this.setState({ projectFilter: event.target.value });
   }
 
   // Filter the project list by the selected filter.
   filterProjects() {
-    if(this.state.projectFilter !== '' && this.state.projectFilter !== this.filters[0]) {
-      this.projectList = this.projectList.filter(project => 
-        project?.props?.techList?.filter(tech => 
+    if (this.state.projectFilter !== '' && this.state.projectFilter !== this.filters[0]) {
+      this.projectList = this.projectList.filter(project =>
+        project?.props?.techList?.filter(tech =>
           tech?.props?.title === this.state.projectFilter
         )?.length > 0
       );
@@ -270,7 +270,7 @@ ProjectCard.propTypes = {
 
 class TechCard extends React.Component {
   render() {
-    return(
+    return (
       <div className="TechCard text-white px-2 py-1 mt-1 mr-1 d-inline-block">{this.props.title}</div>
     );
   }
@@ -282,7 +282,7 @@ TechCard.propTypes = {
 
 class ProjectButton extends React.Component {
   render() {
-    return(
+    return (
       <a target="_blank" rel="noopener noreferrer" href={this.props.link}>
         <button className="ProjectButton text-dark border-0 mr-3 mt-1">{this.props.title} {this.props.icon}</button>
       </a>

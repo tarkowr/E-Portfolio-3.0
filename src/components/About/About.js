@@ -12,9 +12,9 @@ export default class About extends React.Component {
               <img src='richie.JPG' alt='Richie' className='richie-img'></img>
             </div>
             <div className="text-justify m-auto col-12 col-md-10 col-xl-6 px-4 description">
-                Hey, my name is Richie Tarkowski, and I'm a Software Engineer living in the great land of central Illinois! I really enjoy building user experiences, such as mobile apps and websites, though I have an interest in tech and software dev in general. I have experience in Flutter, React, Angular, and ASP.NET.
-                <br /> <br />
-                I should also mention that the most important thing about me is my faith in Christ. My trust is in Him alone.
+              Hey, my name is Richie Tarkowski, and I'm a Software Engineer living in central Illinois. I really enjoy building user experiences, such as mobile apps and websites, though I have an interest in tech and software development in general. I have experience in Flutter, React, Angular, and ASP.NET.
+              <br /> <br />
+              The most important thing about me is my faith in Jesus Christ. Above all else, my hope is in the life, death, and resurrection of Jesus&mdash;the forgiveness of my sins through the cross.
             </div>
           </div>
         </div>

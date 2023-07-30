@@ -7,8 +7,8 @@ export default class Landing extends React.Component {
   name = <div className="name">Richie Tarkowski</div>;
   title = (
     <div className="title px-2">
-      <Typed strings={['Mobile App Developer', 'Flutter Enthusiast', 'Creator of the Versify App']}
-        typeSpeed={15} 
+      <Typed strings={['Mobile App Developer', 'Follower of Christ', 'Co-Founder of Versify']}
+        typeSpeed={15}
         startDelay={0}
         autoInsertCss={true}
         fadeOut={false}
@@ -38,12 +38,12 @@ export default class Landing extends React.Component {
   buildLinkButtons = () => {
     return (
       <div className="pt-5">
-        <LinkCard cardClass="link-linkedin" link="https://www.linkedin.com/in/richie-tarkowski-273238155" 
-          icon={ <i className="fa fa-linkedin"> </i> } onMouseOver={() => this.onLinkMouseOver('LINKEDIN')} onMouseOut={this.onLinkMouseOut} />
-        <LinkCard cardClass="link-github" link="https://github.com/tarkowr" 
-          icon={ <i className="fa fa-github"> </i> } onMouseOver={() => this.onLinkMouseOver('GITHUB')} onMouseOut={this.onLinkMouseOut} />
-        <LinkCard cardClass="link-mail" link="mailto:tarkowr@gmail.com" 
-          icon={ <i className="fa fa-envelope-o"> </i> } onMouseOver={() => this.onLinkMouseOver('EMAIL')} onMouseOut={this.onLinkMouseOut} />
+        <LinkCard cardClass="link-linkedin" link="https://www.linkedin.com/in/richie-tarkowski-273238155"
+          icon={<i className="fa fa-linkedin"> </i>} onMouseOver={() => this.onLinkMouseOver('LINKEDIN')} onMouseOut={this.onLinkMouseOut} />
+        <LinkCard cardClass="link-github" link="https://github.com/tarkowr"
+          icon={<i className="fa fa-github"> </i>} onMouseOver={() => this.onLinkMouseOver('GITHUB')} onMouseOut={this.onLinkMouseOut} />
+        <LinkCard cardClass="link-mail" link="mailto:tarkowr@gmail.com"
+          icon={<i className="fa fa-envelope-o"> </i>} onMouseOver={() => this.onLinkMouseOver('EMAIL')} onMouseOut={this.onLinkMouseOut} />
       </div>
     );
   }
@@ -51,12 +51,12 @@ export default class Landing extends React.Component {
   render() {
     return (
       <div className="Landing w-100 text-center text-white">
-        { this.name }
-        { this.title }
+        {this.name}
+        {this.title}
         <div className="pb-5">
           <div className="py-5">
-            { this.buildLinkButtons() }
-            { this.state.linkLabel }
+            {this.buildLinkButtons()}
+            {this.state.linkLabel}
           </div>
         </div>
       </div>
@@ -68,8 +68,8 @@ class LinkCard extends React.Component {
   render() {
     return (
       <a className={`splash-link ${this.props.cardClass}`} href={this.props.link} target="_blank" rel="noopener noreferrer"
-      onMouseOver={this.props.onMouseOver} onMouseOut={this.props.onMouseOut}>
-        { this.props.icon }
+        onMouseOver={this.props.onMouseOver} onMouseOut={this.props.onMouseOut}>
+        {this.props.icon}
       </a>
     );
   }
