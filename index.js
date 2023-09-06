@@ -10,9 +10,9 @@ const uuid = require('uuid')
 let app = express()
 
 // Use middleware
-app.use(bodyParser.urlencoded({  
+app.use(bodyParser.urlencoded({
     extended: true,
-    keepExtensions: true  
+    keepExtensions: true
 }))
 
 app.use(bodyParser.json())
@@ -99,22 +99,23 @@ app.post('/rating/add', async (req, res) => {
         if (err) {
             onError(err)
         }
-        
-        let farIntoTheFuture = new Date(new Date().getTime() + (1000*60*60*24*365*10))
+
+        let farIntoTheFuture = new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 365 * 10))
         res.cookie(USER_ID_COOKIE, userId, { expires: farIntoTheFuture, httpOnly: true, secure: true })
         return res.status(200).send()
     })
 })
 
-app.use(express.static('build'))
 app.use(express.static('public'))
 
-app.use((req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'))
+const root = require('path').join(__dirname, 'build')
+app.use(express.static(root));
+app.get("*", (req, res) => {
+    res.sendFile('index.html', { root });
 })
 
 const PORT = process.env.PORT || 3200
-app.listen(PORT, function() {
+app.listen(PORT, function () {
     console.log(`Listening on port ${PORT}`)
     AWS.config.update(aws_config)
 })
